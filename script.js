@@ -51,6 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
     loadProducts();
     setupScrollAnimations();
     setupSmoothScroll();
+    setupParallaxEffect();
+    setupResponsiveElements();
 });
 
 // Load products with animation
@@ -164,3 +166,48 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Setup parallax effect
+function setupParallaxEffect() {
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+    
+    if (parallaxElements.length === 0) return;
+    
+    window.addEventListener('scroll', function() {
+        const scrolled = window.pageYOffset;
+        
+        parallaxElements.forEach(element => {
+            const speed = element.getAttribute('data-parallax') || 0.5;
+            const yPos = scrolled * speed;
+            element.style.transform = `translateY(${yPos}px)`;
+        });
+    }, { passive: true });
+}
+
+// Setup responsive elements
+function setupResponsiveElements() {
+    const heroContent = document.querySelector('.hero-content');
+    
+    // Add parallax attribute to hero background
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        hero.setAttribute('data-parallax', '0.5');
+    }
+    
+    // Adjust scroll indicator on scroll
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+        window.addEventListener('scroll', function() {
+            const scrolled = window.scrollY;
+            const heroHeight = window.innerHeight;
+            
+            if (scrolled > heroHeight * 0.3) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
+            } else {
+                scrollIndicator.style.opacity = '0.9';
+                scrollIndicator.style.pointerEvents = 'auto';
+            }
+        }, { passive: true });
+    }
+}
