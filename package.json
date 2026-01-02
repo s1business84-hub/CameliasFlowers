@@ -1,0 +1,27 @@
+{
+  "name": "camelias-flowers",
+  "version": "1.0.0",
+  "description": "Premium Fresh Flowers Delivered Across UAE",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npm run watch & npm run server",
+    "watch": "echo 'Watching for changes...'",
+    "server": "npx http-server -p 8080 -c-1",
+    "build": "echo 'Building project...'",
+    "push": "git add . && git commit -m 'Auto-commit from npm run dev' && git push",
+    "dev:push": "npm run push && npm run dev",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "flowers",
+    "florist",
+    "uae",
+    "dubai",
+    "e-commerce"
+  ],
+  "author": "sanskaar",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
