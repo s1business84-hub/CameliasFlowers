@@ -7,8 +7,8 @@
     "dev": "npm run watch & npm run server",
     "watch": "echo 'Watching for changes...'",
     "server": "npx http-server -p 8080 -c-1",
-    "build": "mkdir -p public && cp index.html login.html styles.css login.css script.js login.js public/",
-    "push": "git add . && git commit -m 'Auto-commit from npm run dev' && git push",
+    "build": "echo 'Static site - no build required'",
+    "push": "git add . && git commit -m 'Auto-commit changes' && git push",
     "dev:push": "npm run push && npm run dev",
     "start": "npm run dev"
   },
