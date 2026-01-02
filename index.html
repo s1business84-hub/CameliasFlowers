@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camellias Flowers - Premium Flowers in UAE</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">🌸 Camellias Flowers</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Flowers</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Camellias Flowers</h1>
+            <p>Premium Fresh Flowers Delivered Across UAE</p>
+            <button class="cta-button" onclick="scrollToProducts()">Shop Now</button>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Our Beautiful Collection</h2>
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Camellias Flowers</h2>
+        <p>Located in the heart of UAE, we provide the finest selection of fresh flowers for all occasions. From birthdays to weddings, corporate events to everyday moments, we deliver beauty to your doorstep.</p>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <p>📍 Dubai, United Arab Emirates</p>
+            <p>📞 +971 XX XXX XXXX</p>
+            <p>✉️ info@camelliasflowers.ae</p>
+        </div>
+    </section>
+
+    <div class="cart-modal" id="cart-modal">
+        <!-- Cart content here -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
