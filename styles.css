@@ -559,7 +559,6 @@ body {
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
 }
-}
 
 .products::before {
     content: '🌺';
