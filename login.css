@@ -501,6 +501,56 @@
     width: 100%;
 }
 
+.account-card {
+    text-align: left;
+}
+
+.account-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+}
+
+.account-label {
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 0.25rem;
+}
+
+.account-value {
+    color: white;
+    font-weight: 700;
+    font-size: 1.05rem;
+}
+
+.account-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    margin: 1rem 0 0.5rem 0;
+}
+
+.auth-button.secondary {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.25));
+    color: #fff;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+}
+
+.auth-button.danger {
+    background: linear-gradient(135deg, #ff4757, #ff6b6b);
+    box-shadow: 0 10px 30px rgba(255, 71, 87, 0.35);
+}
+
+.account-note {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
 /* ============================================
    RESPONSIVE DESIGN
    ============================================ */
