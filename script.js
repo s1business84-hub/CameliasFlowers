@@ -124,7 +124,8 @@ function renderOffers() {
     if (!container) return;
 
     container.innerHTML = seasonalDeals.map(deal => `
-        <div class="offer-card">
+        <div class="offer-card animate-on-scroll">
+            <div class="offer-chip">Seasonal</div>
             <div class="offer-badge">${deal.discount}% OFF</div>
             <div class="offer-body">
                 <h3>${deal.title}</h3>
