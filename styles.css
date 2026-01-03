@@ -292,6 +292,170 @@ body {
 }
 
 .nav-links a::before {
+
+    .offers {
+        padding: 5rem 5%;
+        background: linear-gradient(180deg, rgba(255, 245, 250, 0.95) 0%, rgba(255, 231, 245, 0.9) 100%);
+        position: relative;
+        text-align: center;
+    }
+
+    .offers::before {
+        content: '\1f338';
+        position: absolute;
+        top: 8%;
+        left: 6%;
+        font-size: 4rem;
+        opacity: 0.08;
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .offers::after {
+        content: '\1f33c';
+        position: absolute;
+        bottom: 8%;
+        right: 8%;
+        font-size: 4.5rem;
+        opacity: 0.08;
+        animation: float 7s ease-in-out infinite 1s;
+    }
+
+    .offers h2 {
+        font-size: 3rem;
+        color: var(--text-deep);
+        margin-bottom: 0.75rem;
+    }
+
+    .offers-subtitle {
+        color: #5a4a58;
+        margin-bottom: 2rem;
+        font-size: 1.05rem;
+    }
+
+    .offers-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .offer-card {
+        position: relative;
+        background: rgba(255, 255, 255, 0.9);
+        border: 1px solid rgba(255, 123, 183, 0.2);
+        border-radius: 20px;
+        padding: 1.5rem;
+        box-shadow: 0 12px 30px rgba(255, 123, 183, 0.15);
+        overflow: hidden;
+        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+    }
+
+    .offer-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, rgba(255, 123, 183, 0.08), rgba(255, 154, 213, 0.15));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .offer-card:hover::before {
+        opacity: 1;
+    }
+
+    .offer-card:hover {
+        transform: translateY(-8px) scale(1.01);
+        box-shadow: 0 18px 40px rgba(255, 123, 183, 0.2);
+    }
+
+    .offer-badge {
+        position: absolute;
+        top: 14px;
+        right: 14px;
+        background: linear-gradient(135deg, var(--pink-1), var(--pink-2));
+        color: white;
+        padding: 0.35rem 0.8rem;
+        border-radius: 999px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        box-shadow: 0 10px 25px rgba(255, 123, 183, 0.25);
+    }
+
+    .offer-body {
+        position: relative;
+        z-index: 1;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    .offer-body h3 {
+        font-size: 1.35rem;
+        color: var(--text-deep);
+    }
+
+    .offer-body p {
+        color: #5e5660;
+        line-height: 1.6;
+    }
+
+    .offer-meta {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+    }
+
+    .offer-price {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--pink-3);
+    }
+
+    .offer-code {
+        background: rgba(255, 123, 183, 0.1);
+        color: var(--text-deep);
+        padding: 0.35rem 0.75rem;
+        border-radius: 10px;
+        border: 1px dashed rgba(255, 123, 183, 0.4);
+        font-weight: 600;
+        letter-spacing: 0.4px;
+    }
+
+    .offer-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        flex-wrap: wrap;
+        margin-top: 0.5rem;
+    }
+
+    .offer-valid {
+        color: #7a6b78;
+        font-size: 0.95rem;
+    }
+
+    .offer-cta {
+        padding: 0.75rem 1.25rem;
+        border: none;
+        border-radius: 12px;
+        background: linear-gradient(135deg, var(--pink-1), var(--pink-2));
+        color: white;
+        font-weight: 700;
+        cursor: pointer;
+        box-shadow: 0 10px 25px rgba(255, 123, 183, 0.2);
+        transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .offer-cta:hover {
+        transform: translateY(-3px) scale(1.02);
+    }
+
+    .offer-cta:active {
+        transform: translateY(-1px) scale(0.99);
+    }
     content: '';
     position: absolute;
     top: 50%;
