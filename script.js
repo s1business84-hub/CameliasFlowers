@@ -135,11 +135,29 @@ function renderOffers() {
                 </div>
                 <div class="offer-footer">
                     <span class="offer-valid">Valid until ${deal.validThrough}</span>
-                    <button class="offer-cta" onclick="scrollToProducts()">Shop this</button>
+                    <div class="offer-actions">
+                        <button class="copy-code" onclick="copyPromo('${deal.code}')">Copy code</button>
+                        <button class="offer-cta" onclick="scrollToProducts()">Shop this</button>
+                    </div>
                 </div>
             </div>
         </div>
     `).join('');
+}
+
+// Copy promo code helper
+function copyPromo(code) {
+    if (!navigator.clipboard) {
+        const textarea = document.createElement('textarea');
+        textarea.value = code;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        textarea.remove();
+    } else {
+        navigator.clipboard.writeText(code).catch(() => {});
+    }
+    showNotification(`Promo code ${code} copied!`);
 }
 
 function renderProducts(list) {
