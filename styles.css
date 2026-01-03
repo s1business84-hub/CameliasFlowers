@@ -11,6 +11,16 @@ body {
     overflow-x: hidden;
 }
 
+:root {
+    --pink-1: #ff7bb7;
+    --pink-2: #ff9ad5;
+    --pink-3: #ff4f9b;
+    --pink-soft: #ffe5f4;
+    --text-deep: #2b1b27;
+    --glass: rgba(255, 255, 255, 0.12);
+    --glass-strong: rgba(255, 255, 255, 0.18);
+}
+
 /* ============================================
    KEYFRAME ANIMATIONS
    ============================================ */
@@ -135,13 +145,13 @@ body {
 
 @keyframes glowPulse {
     0%, 100% {
-        box-shadow: 0 0 5px rgba(102, 126, 234, 0.5),
-                    0 0 10px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 0 5px rgba(255, 123, 183, 0.6),
+                    0 0 12px rgba(255, 123, 183, 0.4);
     }
     50% {
-        box-shadow: 0 0 20px rgba(102, 126, 234, 0.8),
-                    0 0 30px rgba(102, 126, 234, 0.5),
-                    0 0 40px rgba(102, 126, 234, 0.3);
+        box-shadow: 0 0 24px rgba(255, 123, 183, 0.85),
+                    0 0 34px rgba(255, 123, 183, 0.6),
+                    0 0 44px rgba(255, 123, 183, 0.35);
     }
 }
 
@@ -209,7 +219,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 5%;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.7) 100%);
+    background: linear-gradient(135deg, rgba(255, 123, 183, 0.75) 0%, rgba(255, 159, 213, 0.75) 100%);
     background-size: 200% 200%;
     animation: fadeInDown 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
                backgroundShift 10s ease infinite;
@@ -364,7 +374,7 @@ body {
 }
 
 #cart-count {
-    background: #ff4757;
+    background: var(--pink-3);
     border-radius: 50%;
     padding: 2px 6px;
     font-size: 0.8rem;
@@ -383,8 +393,8 @@ body {
    ============================================ */
 
 .hero {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.4) 0%, rgba(118, 75, 162, 0.4) 100%),
-                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:rgb(102,126,234);stop-opacity:0.1" /><stop offset="100%25" style="stop-color:rgb(118,75,162);stop-opacity:0.1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/></svg>');
+    background: linear-gradient(135deg, rgba(255, 123, 183, 0.45) 0%, rgba(255, 159, 213, 0.45) 100%),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><defs><linearGradient id="grad1" x1="0%25" y1="0%25" x2="100%25" y2="100%25"><stop offset="0%25" style="stop-color:rgb(255,123,183);stop-opacity:0.1" /><stop offset="100%25" style="stop-color:rgb(255,159,213);stop-opacity:0.1" /></linearGradient></defs><rect width="1200" height="800" fill="url(%23grad1)"/></svg>');
     background-size: 200% 200%, cover;
     background-attachment: fixed;
     animation: backgroundShift 15s ease infinite;
@@ -466,8 +476,8 @@ body {
 .cta-button {
     padding: 1rem 3rem;
     font-size: 1.2rem;
-    background: white;
-    color: #667eea;
+    background: linear-gradient(135deg, var(--pink-1), var(--pink-2));
+    color: white;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -487,7 +497,7 @@ body {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(102, 126, 234, 0.1);
+    background: rgba(255, 123, 183, 0.15);
     transform: translate(-50%, -50%);
     transition: width 0.6s, height 0.6s;
 }
@@ -584,7 +594,7 @@ body {
     text-align: center;
     font-size: 3rem;
     margin-bottom: 3rem;
-    color: #333;
+    color: var(--text-deep);
     animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     position: relative;
     display: inline-block;
@@ -605,7 +615,7 @@ body {
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background: linear-gradient(90deg, #667eea, #764ba2);
+    background: linear-gradient(90deg, var(--pink-1), var(--pink-2));
     border-radius: 2px;
     animation: slideInScale 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s backwards;
 }
@@ -679,7 +689,7 @@ body {
     bottom: 0;
     border-radius: 20px;
     opacity: 0;
-    box-shadow: 0 0 0 3px #667eea;
+    box-shadow: 0 0 0 3px var(--pink-1);
     transition: opacity 0.3s;
     pointer-events: none;
 }
@@ -690,7 +700,7 @@ body {
 
 .product-card:hover {
     transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+    box-shadow: 0 20px 50px rgba(255, 123, 183, 0.25);
 }
 
 .product-image {
@@ -717,12 +727,12 @@ body {
     font-size: 1.5rem;
     font-weight: bold;
     margin-bottom: 0.5rem;
-    color: #333;
+    color: var(--text-deep);
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .product-card:hover .product-name {
-    color: #667eea;
+    color: var(--pink-3);
     transform: translateX(5px);
 }
 
@@ -740,7 +750,7 @@ body {
 
 .product-price {
     font-size: 1.8rem;
-    color: #764ba2;
+    color: var(--pink-3);
     font-weight: bold;
     margin-bottom: 1rem;
     transition: transform 0.3s ease;
@@ -755,7 +765,7 @@ body {
 .add-to-cart {
     width: 100%;
     padding: 1rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--pink-1) 0%, var(--pink-2) 100%);
     background-size: 200% 200%;
     color: white;
     border: none;
@@ -817,7 +827,7 @@ body {
 
 .about {
     padding: 5rem 5%;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(255, 155, 205, 0.18) 0%, rgba(255, 233, 247, 0.4) 100%);
     text-align: center;
     animation: fadeIn 1s ease-in;
     position: relative;
@@ -849,7 +859,7 @@ body {
 .about h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
-    color: #333;
+    color: var(--text-deep);
     animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     transition: transform 0.3s ease, color 0.3s ease;
     display: inline-block;
@@ -857,7 +867,7 @@ body {
 
 .about h2:hover {
     transform: scale(1.05);
-    color: #667eea;
+    color: var(--pink-3);
 }
 
 .about p {
@@ -881,7 +891,7 @@ body {
 
 .contact {
     padding: 5rem 5%;
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.8) 0%, rgba(118, 75, 162, 0.8) 100%);
+    background: linear-gradient(135deg, rgba(255, 123, 183, 0.8) 0%, rgba(255, 159, 213, 0.85) 100%);
     background-size: 200% 200%;
     background-attachment: fixed;
     animation: fadeIn 1s ease-in, backgroundShift 15s ease infinite;
