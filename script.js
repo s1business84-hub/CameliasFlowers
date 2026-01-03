@@ -56,6 +56,45 @@ const products = [
     }
 ];
 
+const seasonalDeals = [
+    {
+        id: 'winter-romance',
+        title: 'Winter Romance',
+        description: 'Snowy whites with blush roses and eucalyptus.',
+        discount: 15,
+        price: 199,
+        code: 'WINTER15',
+        validThrough: 'Jan 31'
+    },
+    {
+        id: 'lunar-blooms',
+        title: 'Lunar New Year Blooms',
+        description: 'Lucky reds and gold accents for celebration.',
+        discount: 18,
+        price: 220,
+        code: 'LUNAR18',
+        validThrough: 'Feb 15'
+    },
+    {
+        id: 'valentine-lux',
+        title: 'Valentine Luxe Box',
+        description: 'Signature roses with artisan chocolates.',
+        discount: 20,
+        price: 260,
+        code: 'LOVE20',
+        validThrough: 'Feb 14'
+    },
+    {
+        id: 'spring-awakening',
+        title: 'Spring Awakening',
+        description: 'Tulips, peonies, and hyacinth in pastel palette.',
+        discount: 12,
+        price: 185,
+        code: 'SPRING12',
+        validThrough: 'Mar 30'
+    }
+];
+
 let cart = [];
 
 const filters = {
@@ -67,6 +106,7 @@ const filters = {
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
     loadProducts();
+    renderOffers();
     setupProductTools();
     setupScrollAnimations();
     setupSmoothScroll();
@@ -77,6 +117,29 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load products with animation
 function loadProducts() {
     renderProducts(products);
+}
+
+function renderOffers() {
+    const container = document.getElementById('offers-grid');
+    if (!container) return;
+
+    container.innerHTML = seasonalDeals.map(deal => `
+        <div class="offer-card">
+            <div class="offer-badge">${deal.discount}% OFF</div>
+            <div class="offer-body">
+                <h3>${deal.title}</h3>
+                <p>${deal.description}</p>
+                <div class="offer-meta">
+                    <span class="offer-price">AED ${deal.price}</span>
+                    <span class="offer-code">Code: ${deal.code}</span>
+                </div>
+                <div class="offer-footer">
+                    <span class="offer-valid">Valid until ${deal.validThrough}</span>
+                    <button class="offer-cta" onclick="scrollToProducts()">Shop this</button>
+                </div>
+            </div>
+        </div>
+    `).join('');
 }
 
 function renderProducts(list) {
