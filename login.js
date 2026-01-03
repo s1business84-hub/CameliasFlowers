@@ -1,16 +1,35 @@
 // Login/Register Page JavaScript
 
+const USER_KEY = 'camelias_user';
+const USER_PROFILE_KEY = 'camelias_user_profile';
+const REMEMBER_KEY = 'camelias_remember';
+
 // Initialize
 document.addEventListener('DOMContentLoaded', function() {
     setupFormValidation();
     setupFormSubmissions();
+    setupAccountActions();
+    syncAuthViews();
 });
 
 // Toggle between login and register forms
 function toggleAuthForm() {
     const loginWrapper = document.getElementById('login-wrapper');
     const registerWrapper = document.getElementById('register-wrapper');
+    const accountWrapper = document.getElementById('account-wrapper');
     
+    if (!loginWrapper || !registerWrapper) return;
+
+    // If an account is active, show account card instead of toggling forms
+    const user = getStoredUser();
+    if (user && accountWrapper) {
+        loginWrapper.classList.add('hidden');
+        registerWrapper.classList.add('hidden');
+        accountWrapper.classList.remove('hidden');
+        updateAccountDetails(user);
+        return;
+    }
+
     loginWrapper.classList.toggle('hidden');
     registerWrapper.classList.toggle('hidden');
     
@@ -104,11 +123,9 @@ function handleLoginSubmit(e) {
             loginTime: new Date().toISOString()
         };
 
-        localStorage.setItem('camelias_user', JSON.stringify(user));
-        
-        if (rememberMe) {
-            localStorage.setItem('camelias_remember', 'true');
-        }
+        setUserSession(user);
+        if (rememberMe) localStorage.setItem(REMEMBER_KEY, 'true');
+        updateAccountDetails(user);
 
         showAuthSuccess('Welcome back! Redirecting...');
         
@@ -172,14 +189,16 @@ function handleRegisterSubmit(e) {
             registrationDate: new Date().toISOString()
         };
 
-        localStorage.setItem('camelias_user', JSON.stringify(newUser));
-        localStorage.setItem('camelias_user_profile', JSON.stringify({
+        setUserSession(newUser);
+        localStorage.setItem(USER_PROFILE_KEY, JSON.stringify({
             ...newUser,
             preferences: {
                 notifications: true,
                 newsletter: true
             }
         }));
+
+        updateAccountDetails(newUser);
 
         showAuthSuccess('Account created successfully! Redirecting...');
         
@@ -328,7 +347,8 @@ function handleSocialLogin(provider) {
             loginTime: new Date().toISOString()
         };
 
-        localStorage.setItem('camelias_user', JSON.stringify(user));
+        setUserSession(user);
+        updateAccountDetails(user);
         
         showAuthSuccess(`Welcome! Redirecting...`);
         
@@ -365,3 +385,79 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// ----- Account helpers -----
+
+function getStoredUser() {
+    const raw = localStorage.getItem(USER_KEY);
+    if (!raw) return null;
+    try {
+        return JSON.parse(raw);
+    } catch (e) {
+        return null;
+    }
+}
+
+function setUserSession(user) {
+    localStorage.setItem(USER_KEY, JSON.stringify(user));
+}
+
+function clearUserSession() {
+    localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(USER_PROFILE_KEY);
+    localStorage.removeItem(REMEMBER_KEY);
+}
+
+function setupAccountActions() {
+    const logoutBtn = document.getElementById('logout-btn');
+    const deleteBtn = document.getElementById('delete-btn');
+
+    logoutBtn?.addEventListener('click', () => {
+        clearUserSession();
+        showAuthSuccess('Signed out successfully');
+        syncAuthViews();
+    });
+
+    deleteBtn?.addEventListener('click', () => {
+        clearUserSession();
+        showAuthSuccess('Account deleted from this device');
+        syncAuthViews();
+    });
+}
+
+function syncAuthViews() {
+    const user = getStoredUser();
+    const loginWrapper = document.getElementById('login-wrapper');
+    const registerWrapper = document.getElementById('register-wrapper');
+    const accountWrapper = document.getElementById('account-wrapper');
+
+    if (user) {
+        loginWrapper?.classList.add('hidden');
+        registerWrapper?.classList.add('hidden');
+        accountWrapper?.classList.remove('hidden');
+        updateAccountDetails(user);
+    } else {
+        accountWrapper?.classList.add('hidden');
+        loginWrapper?.classList.remove('hidden');
+        registerWrapper?.classList.add('hidden');
+    }
+}
+
+function updateAccountDetails(user) {
+    if (!user) return;
+    const nameEl = document.getElementById('account-name');
+    const emailEl = document.getElementById('account-email');
+    const statusEl = document.getElementById('account-status');
+    const createdEl = document.getElementById('account-created');
+
+    nameEl && (nameEl.textContent = user.name || 'Guest user');
+    emailEl && (emailEl.textContent = user.email || 'Not set');
+
+    const provider = user.provider ? `Signed in with ${user.provider}` : 'Email/password login';
+    statusEl && (statusEl.textContent = provider);
+
+    const created = user.registrationDate || user.loginTime;
+    if (createdEl) {
+        createdEl.textContent = created ? new Date(created).toLocaleDateString('en-GB') : '—';
+    }
+}
