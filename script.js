@@ -453,3 +453,51 @@ function applyFilters() {
 
     renderProducts(filtered);
 }
+
+// Contact Form Handler
+function handleContactSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const formData = new FormData(form);
+    
+    // Simulate form submission
+    alert('Thank you for your message! We will get back to you within 24 hours.');
+    form.reset();
+}
+
+// Newsletter Form Handler
+function handleNewsletterSubmit(event) {
+    event.preventDefault();
+    const form = event.target;
+    const email = form.querySelector('input[type="email"]').value;
+    
+    // Simulate newsletter subscription
+    alert(`Thank you for subscribing with ${email}! Check your inbox for exclusive offers.`);
+    form.reset();
+}
+
+// Scroll animations for new sections
+function initScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, observerOptions);
+
+    document.querySelectorAll('.feature-card, .testimonial-card, .about-feature-item').forEach(el => {
+        el.classList.add('animate-on-scroll');
+        observer.observe(el);
+    });
+}
+
+// Initialize all animations when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    initScrollAnimations();
+});

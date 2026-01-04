@@ -26,14 +26,58 @@
 
     <section id="home" class="hero">
         <div class="hero-content">
+            <div class="hero-badge">🏆 UAE's Most Trusted Florist Since 2015</div>
             <h1>Welcome to Camellias Flowers</h1>
-            <p>Premium Fresh Flowers Delivered Across United Arab Emirates</p>
-            <button class="cta-button" onclick="scrollToProducts()">Shop Now</button>
+            <p class="hero-tagline">Premium Fresh Flowers Delivered Across United Arab Emirates</p>
+            <p class="hero-description">Experience luxury blooms handcrafted by award-winning florists. Same-day delivery available across Dubai, Abu Dhabi, and Sharjah.</p>
+            <div class="hero-buttons">
+                <button class="cta-button" onclick="scrollToProducts()">Shop Now</button>
+                <button class="cta-button-outline" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Custom Orders</button>
+            </div>
             <div class="season-pill" onclick="document.getElementById('offers').scrollIntoView({behavior: 'smooth'})">
                 ❄️ Winter specials up to 20% off · Tap to view
             </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-number">50K+</span>
+                    <span class="stat-label">Happy Customers</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support Available</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Fresh Guarantee</span>
+                </div>
+            </div>
         </div>
         <div class="scroll-indicator">↓</div>
+    </section>
+
+    <section id="features" class="features">
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">🚚</div>
+                <h3>Same-Day Delivery</h3>
+                <p>Order before 2 PM for same-day delivery across UAE. Express options available.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🌺</div>
+                <h3>Fresh Guarantee</h3>
+                <p>100% fresh flowers sourced daily from the finest farms worldwide.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h3>Custom Designs</h3>
+                <p>Bespoke arrangements tailored to your vision by expert florists.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">💝</div>
+                <h3>Gift Packaging</h3>
+                <p>Luxury presentation with personalized cards and premium wrapping.</p>
+            </div>
+        </div>
     </section>
 
     <section id="products" class="products">
@@ -50,18 +94,180 @@
     </section>
 
     <section id="about" class="about">
-        <h2>About Camellias Flowers</h2>
-        <p>Located in the heart of UAE, we provide the finest selection of fresh flowers for all occasions. From birthdays to weddings, corporate events to everyday moments, we deliver beauty to your doorstep.</p>
+        <div class="about-container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1487070183336-b863922373d4?w=800" alt="Florist arranging flowers">
+                <div class="about-badge">✨ Handcrafted with Love</div>
+            </div>
+            <div class="about-content">
+                <h2>About Camellias Flowers</h2>
+                <p class="about-intro">Where passion meets petals in the heart of UAE</p>
+                <p>Located in the heart of UAE, we provide the finest selection of fresh flowers for all occasions. From birthdays to weddings, corporate events to everyday moments, we deliver beauty to your doorstep.</p>
+                <p>Our master florists bring over 30 years of combined experience, trained in European floral design techniques. Each arrangement is a work of art, carefully crafted to express your emotions and celebrate life's precious moments.</p>
+                <div class="about-features">
+                    <div class="about-feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Award-winning florists</span>
+                    </div>
+                    <div class="about-feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Sustainable sourcing practices</span>
+                    </div>
+                    <div class="about-feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Premium imported flowers</span>
+                    </div>
+                    <div class="about-feature-item">
+                        <span class="feature-check">✓</span>
+                        <span>Custom corporate solutions</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+        <h2>What Our Customers Say</h2>
+        <p class="testimonials-subtitle">Trusted by thousands across the UAE</p>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Absolutely stunning arrangement! Delivered exactly on time and my wife was thrilled. The freshness and quality exceeded expectations. Will definitely order again!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">👨</div>
+                    <div>
+                        <div class="author-name">Ahmed Al-Mansouri</div>
+                        <div class="author-location">Dubai Marina</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Used Camellias for our wedding flowers and they were phenomenal. The attention to detail and creativity was outstanding. Highly professional team!"</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">👰</div>
+                    <div>
+                        <div class="author-name">Sarah Johnson</div>
+                        <div class="author-location">Abu Dhabi</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+                <p class="testimonial-text">"Best florist in UAE! The custom Valentine's arrangement was breathtaking. Customer service is exceptional and flowers stayed fresh for over a week."</p>
+                <div class="testimonial-author">
+                    <div class="author-avatar">👨‍💼</div>
+                    <div>
+                        <div class="author-name">Mohammed Hassan</div>
+                        <div class="author-location">Sharjah</div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="contact" class="contact">
-        <h2>Contact Us</h2>
-        <div class="contact-info">
-            <p>📍 Dubai, United Arab Emirates</p>
-            <p>📞 +971 56 775 6327</p>
-            <p>✉️ info@camelliasflowers.ae</p>
+        <div class="contact-container">
+            <div class="contact-info-section">
+                <h2>Get in Touch</h2>
+                <p class="contact-subtitle">We're here to help bring your floral vision to life</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Visit Us</h4>
+                            <p>Dubai Marina Walk, Dubai, UAE</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Call Us</h4>
+                            <p>+971 56 775 6327</p>
+                            <p>Available 24/7</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h4>Email Us</h4>
+                            <p>info@camelliasflowers.ae</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="social-media">
+                    <h4>Follow Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">📘</a>
+                        <a href="#" class="social-icon">📷</a>
+                        <a href="#" class="social-icon">🐦</a>
+                        <a href="#" class="social-icon">💼</a>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-section">
+                <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                    <h3>Send Us a Message</h3>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Send Message</button>
+                </form>
+            </div>
         </div>
     </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>🌸 Camellias Flowers</h3>
+                <p>UAE's premier destination for luxury floral arrangements and gifts.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Shop</a></li>
+                    <li><a href="#offers">Offers</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Wedding Flowers</a></li>
+                    <li><a href="#">Corporate Events</a></li>
+                    <li><a href="#">Subscriptions</a></li>
+                    <li><a href="#">Gift Hampers</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Newsletter</h4>
+                <p>Subscribe for exclusive offers and updates</p>
+                <form class="newsletter-form" onsubmit="handleNewsletterSubmit(event)">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Camellias Flowers. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Refund Policy</a>
+            </div>
+        </div>
+    </footer>
 
     <div class="cart-modal" id="cart-modal">
         <!-- Cart content here -->
