@@ -46,7 +46,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="relative h-96 md:h-[480px]">
-            <Image src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1200" alt="Camelias flowers hero" fill className="object-cover rounded-3xl shadow-glass" priority />
+            <Image src="/images/products/tulips.jpg" alt="Camelias flowers hero" fill className="object-cover rounded-3xl shadow-glass" priority />
           </div>
         </div>
       </section>
@@ -119,7 +119,7 @@ export default function HomePage() {
             </div>
           </div>
           <div className="flex-1 w-full h-56 relative">
-            <Image src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200" alt="Hampers" fill className="object-cover rounded-2xl" />
+            <Image src="/images/products/roses.jpg" alt="Hampers" fill className="object-cover rounded-2xl" />
           </div>
         </div>
       </section>

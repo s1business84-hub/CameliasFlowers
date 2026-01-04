@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: "Custom flowers, luxury hampers, and bespoke gifting.",
     url: "https://www.cameliasflowers.example",
     siteName: "Camelias Flowers",
-    images: [{ url: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1200" }],
+    images: [{ url: "/images/products/tulips.jpg" }],
   },
   alternates: {
     canonical: "https://www.cameliasflowers.example",

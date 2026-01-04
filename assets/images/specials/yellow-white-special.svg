@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1200" viewBox="0 0 900 1200" role="img" aria-label="Yellow and white bouquet placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5f7ff"/>
+      <stop offset="50%" stop-color="#fdf5d9"/>
+      <stop offset="100%" stop-color="#f7f0ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="1200" fill="url(#bg)"/>
+  <rect x="80" y="140" width="740" height="920" rx="48" fill="#ffffff" stroke="#f1e7ff" stroke-width="6"/>
+  <rect x="120" y="180" width="660" height="840" rx="42" fill="#fdf9ef" stroke="#f0e0c5" stroke-width="3"/>
+  <circle cx="450" cy="520" r="220" fill="#fff9d6" stroke="#f2d98a" stroke-width="12"/>
+  <path d="M450 300c-40 60-80 120-120 200s-40 160 0 210 120 60 180 20 120-130 120-210-40-140-80-220z" fill="#ffeeb0" stroke="#f2d98a" stroke-width="6" opacity="0.8"/>
+  <path d="M450 340c-20 40-60 100-60 150s20 90 60 110 80 0 110-50 30-120 0-170-90-80-110-40z" fill="#fffef8" stroke="#e6d0aa" stroke-width="5"/>
+  <path d="M360 760c-30 10-70 40-70 70s40 40 70 30 90-40 120-40 60 20 80 20 40-10 40-30-20-40-50-50-80-10-120 0-80 0-70 0z" fill="#e2f3ff" stroke="#c8e4ff" stroke-width="5"/>
+  <text x="450" y="970" fill="#b17c00" font-family="'Helvetica Neue', Arial, sans-serif" font-size="46" text-anchor="middle" font-weight="700">Yellow &amp; White Special</text>
+  <text x="450" y="1026" fill="#7a5c2b" font-family="'Helvetica Neue', Arial, sans-serif" font-size="26" text-anchor="middle">Add provided photo for final look</text>
+</svg>

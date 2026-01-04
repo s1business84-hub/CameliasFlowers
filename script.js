@@ -143,6 +143,28 @@ const seasonalDeals = [
     }
 ];
 
+// Specials section: curated ready-to-order bouquets
+const specials = [
+    {
+        id: 'special-red-roses',
+        title: 'Red Rose Signature',
+        description: '12 premium red roses in a sculptural black vase. Includes wrap, vase, card, VAT, and Sharjah delivery.',
+        price: 190,
+        image: 'assets/images/products/roses.jpg',
+        fallbackImage: 'assets/images/products/roses.jpg',
+        badge: 'All included'
+    },
+    {
+        id: 'special-yellow-white',
+        title: 'Yellow & White Bouquet',
+        description: 'White roses with sunny fillers in a soft aqua wrap. Includes ribbon, card, VAT, and Sharjah delivery.',
+        price: 160,
+        image: 'assets/images/specials/yellow-white-special.svg',
+        fallbackImage: 'assets/images/specials/yellow-white-special.svg',
+        badge: 'Special price'
+    }
+];
+
 let cart = [];
 
 const filters = {
@@ -154,6 +176,7 @@ const filters = {
 // Initialize page
 document.addEventListener('DOMContentLoaded', function() {
     loadProducts();
+    renderSpecials();
     renderOffers();
     setupProductTools();
     setupScrollAnimations();
@@ -165,6 +188,35 @@ document.addEventListener('DOMContentLoaded', function() {
 // Load products with animation
 function loadProducts() {
     renderProducts(products);
+}
+
+function renderSpecials() {
+    const container = document.getElementById('specials-grid');
+    if (!container) return;
+
+    container.innerHTML = specials.map(deal => `
+        <div class="offer-card animate-on-scroll" onclick="orderViaWhatsApp('${deal.title}', ${deal.price})" style="cursor: pointer;">
+            <div class="offer-image">
+                <img src="${deal.image}" alt="${deal.title}" onerror="this.onerror=null; this.src='${deal.fallbackImage || deal.image}';">
+                <div class="offer-badge">${deal.badge || 'Special'}</div>
+            </div>
+            <div class="offer-chip">Specials</div>
+            <div class="offer-body">
+                <h3>${deal.title}</h3>
+                <p>${deal.description}</p>
+                <div class="offer-meta">
+                    <span class="offer-price">AED ${deal.price}</span>
+                    <span class="offer-code">All-inclusive</span>
+                </div>
+                <div class="offer-footer">
+                    <span class="offer-valid">Includes wrapping, VAT, and Sharjah delivery</span>
+                    <div class="offer-actions">
+                        <button class="offer-cta" onclick="event.stopPropagation(); orderViaWhatsApp('${deal.title}', ${deal.price})">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `).join('');
 }
 
 function renderOffers() {

@@ -19,7 +19,7 @@ export const hampers: Hamper[] = [
     category: "Romantic",
     price: 780,
     items: ["Preserved roses", "Rosé", "Truffles", "Gold foliage"],
-    image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200",
+    image: "/images/products/roses.jpg",
     featured: true,
   },
   {
@@ -30,7 +30,7 @@ export const hampers: Hamper[] = [
     category: "Corporate",
     price: 920,
     items: ["Phalaenopsis orchids", "Specialty coffee", "Leather folio"],
-    image: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=1200",
+    image: "/images/products/orchids.jpg",
   },
   {
     id: "h3",
@@ -40,7 +40,7 @@ export const hampers: Hamper[] = [
     category: "Congrats",
     price: 690,
     items: ["Sparkling", "Macarons", "Garden roses", "Voucher"],
-    image: "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=1200",
+    image: "/images/products/tulips.jpg",
   }
 ];
 

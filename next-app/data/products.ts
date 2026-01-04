@@ -21,7 +21,7 @@ export const products: Product[] = [
     price: 520,
     color: "Blush",
     tags: ["peonies", "roses", "hand-tied"],
-    image: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?w=1200",
+    image: "/images/products/tulips.jpg",
     featured: true,
   },
   {
@@ -33,7 +33,7 @@ export const products: Product[] = [
     price: 480,
     color: "Ivory",
     tags: ["orchids", "roses", "modern"],
-    image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200",
+    image: "/images/products/orchids.jpg",
     featured: true,
   },
   {
@@ -45,7 +45,7 @@ export const products: Product[] = [
     price: 890,
     color: "Crimson",
     tags: ["roses", "grand", "box"],
-    image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200",
+    image: "/images/products/roses.jpg",
   },
   {
     id: "p4",
@@ -56,7 +56,7 @@ export const products: Product[] = [
     price: 360,
     color: "Sunlit",
     tags: ["dahlias", "tulips", "bright"],
-    image: "https://images.unsplash.com/photo-1468327768560-75b778cbb551?w=1200",
+    image: "/images/products/sunflower.jpg",
   },
   {
     id: "p5",
@@ -67,7 +67,7 @@ export const products: Product[] = [
     price: 410,
     color: "Pastel",
     tags: ["hydrangea", "delphinium", "whimsical"],
-    image: "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=1200",
+    image: "/images/products/lilies.jpg",
   }
 ];
 
