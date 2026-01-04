@@ -2229,16 +2229,69 @@ body {
     
     .offers-grid {
         gap: 1rem;
-        padding: 0 0.5rem;
+        padding: 1rem 0.5rem;
+        justify-content: center;
     }
     
     .offer-card {
-        min-width: 280px;
-        max-width: 320px;
+        min-width: 85vw;
+        max-width: 85vw;
+        height: auto;
+        padding: 1.5rem;
     }
     
     .offer-image {
-        height: 200px;
+        height: 240px;
+        margin-bottom: 1rem;
+    }
+    
+    .offer-image img {
+        object-fit: cover;
+    }
+    
+    .offer-body {
+        padding: 0;
+    }
+    
+    .offer-body h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .offer-body p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .offer-meta {
+        margin: 1rem 0;
+        flex-wrap: wrap;
+    }
+    
+    .offer-price {
+        font-size: 1.5rem;
+    }
+    
+    .offer-footer {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    
+    .offer-valid {
+        font-size: 0.8rem;
+    }
+    
+    .offer-actions {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .offer-cta,
+    .copy-code {
+        width: 100%;
+        padding: 0.85rem 1rem;
+        font-size: 0.95rem;
     }
     
     .products {
@@ -2446,6 +2499,19 @@ body {
     .contact-info-section h2,
     .quiz-header h2 {
         font-size: 1.75rem;
+    }
+    
+    .offer-card {
+        min-width: 90vw;
+        max-width: 90vw;
+    }
+    
+    .offer-body h3 {
+        font-size: 1.2rem;
+    }
+    
+    .offer-price {
+        font-size: 1.4rem;
     }
     
     .offer-card {

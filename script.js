@@ -150,7 +150,7 @@ const specials = [
         title: 'Red Rose Signature',
         description: '12 premium red roses in a sculptural black vase. Includes wrap, vase, card, VAT, and Sharjah delivery.',
         price: 190,
-        image: 'assets/images/products/roses.jpg',
+        image: 'assets/images/specials/red-roses-special.jpg',
         fallbackImage: 'assets/images/products/roses.jpg',
         badge: 'All included'
     },
@@ -159,8 +159,8 @@ const specials = [
         title: 'Yellow & White Bouquet',
         description: 'White roses with sunny fillers in a soft aqua wrap. Includes ribbon, card, VAT, and Sharjah delivery.',
         price: 160,
-        image: 'assets/images/specials/yellow-white-special.svg',
-        fallbackImage: 'assets/images/specials/yellow-white-special.svg',
+        image: 'assets/images/specials/yellow-white-special.jpg',
+        fallbackImage: 'assets/images/specials/yellow-white-special.jpg',
         badge: 'Special price'
     }
 ];
