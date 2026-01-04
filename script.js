@@ -162,6 +162,15 @@ const specials = [
         image: 'assets/images/specials/yellow-white-special.jpg',
         fallbackImage: 'assets/images/specials/yellow-white-special.jpg',
         badge: 'Special price'
+    },
+    {
+        id: 'special-orchid-elegance',
+        title: 'Orchid Elegance',
+        description: 'Stunning cream white roses with delicate golden solidago fillers, wrapped in elegant mint Korean paper with satin ribbon. Perfect for any occasion.',
+        price: 150,
+        image: 'assets/images/specials/orchid-elegance.jpg',
+        fallbackImage: 'assets/images/specials/orchid-elegance.jpg',
+        badge: 'New Arrival'
     }
 ];
 
@@ -212,6 +221,7 @@ function renderSpecials() {
                     <span class="offer-valid">Includes wrapping, VAT, and Sharjah delivery</span>
                     <div class="offer-actions">
                         <button class="offer-cta" onclick="event.stopPropagation(); orderViaWhatsApp('${deal.title}', ${deal.price})">Order Now</button>
+                        <a href="https://wa.me/971507056500?text=Hi! I'm interested in ${encodeURIComponent(deal.title)}" target="_blank" class="offer-whatsapp" onclick="event.stopPropagation();"><i class="fab fa-whatsapp"></i> Chat</a>
                     </div>
                 </div>
             </div>
