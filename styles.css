@@ -295,58 +295,113 @@ body {
 
     .offers {
         padding: 5rem 5%;
-        background: linear-gradient(180deg, rgba(255, 245, 250, 0.95) 0%, rgba(255, 231, 245, 0.9) 100%);
+        background: linear-gradient(135deg, 
+            rgba(255, 240, 250, 0.95) 0%, 
+            rgba(255, 220, 245, 0.98) 25%,
+            rgba(245, 230, 255, 0.95) 50%,
+            rgba(255, 235, 245, 0.98) 75%,
+            rgba(250, 245, 255, 0.95) 100%);
+        background-size: 400% 400%;
+        animation: gradientFlow 15s ease infinite;
         position: relative;
         text-align: center;
+        overflow: hidden;
     }
 
     .offers::before {
-        content: '\1f338';
+        content: '';
         position: absolute;
-        top: 8%;
-        left: 6%;
-        font-size: 4rem;
-        opacity: 0.08;
-        animation: float 6s ease-in-out infinite;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at 30% 50%, 
+            rgba(255, 182, 193, 0.3) 0%, 
+            rgba(255, 105, 180, 0.2) 20%,
+            transparent 50%);
+        animation: liquidMove 20s ease-in-out infinite;
+        pointer-events: none;
     }
 
     .offers::after {
-        content: '\1f33c';
+        content: '';
         position: absolute;
-        bottom: 8%;
-        right: 8%;
-        font-size: 4.5rem;
-        opacity: 0.08;
-        animation: float 7s ease-in-out infinite 1s;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at 70% 50%, 
+            rgba(218, 112, 214, 0.25) 0%, 
+            rgba(255, 20, 147, 0.15) 20%,
+            transparent 50%);
+        animation: liquidMove 25s ease-in-out infinite reverse;
+        pointer-events: none;
+    }
+
+    @keyframes gradientFlow {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+    }
+
+    @keyframes liquidMove {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(10%, 10%) rotate(5deg); }
+        50% { transform: translate(5%, -5%) rotate(-3deg); }
+        75% { transform: translate(-5%, 5%) rotate(3deg); }
     }
 
     .offers h2 {
-        font-size: 3rem;
-        color: var(--text-deep);
-        margin-bottom: 0.75rem;
+        font-size: 3.5rem;
+        background: linear-gradient(135deg, #ff1493, #ff69b4, #da70d6, #ff1493);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: gradientText 3s ease infinite;
+        margin-bottom: 1rem;
+        font-weight: 800;
+        position: relative;
+        z-index: 1;
+        text-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+    }
+
+    @keyframes gradientText {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
     }
 
     .offers-subtitle {
-        color: #5a4a58;
-        margin-bottom: 2rem;
-        font-size: 1.05rem;
+        color: #8b4789;
+        margin-bottom: 3rem;
+        font-size: 1.15rem;
+        position: relative;
+        z-index: 1;
+        font-weight: 500;
+        letter-spacing: 0.5px;
     }
 
     .offers-grid {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 1.5rem;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        position: relative;
+        z-index: 1;
     }
 
     .offer-card {
         position: relative;
-        background: rgba(255, 255, 255, 0.9);
-        border: 1px solid rgba(255, 123, 183, 0.2);
-        border-radius: 20px;
-        padding: 1.5rem;
-        box-shadow: 0 12px 30px rgba(255, 123, 183, 0.15);
+        background: rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 28px;
+        padding: 2rem;
+        box-shadow: 
+            0 8px 32px rgba(255, 105, 180, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.6),
+            inset 0 -1px 0 rgba(255, 182, 193, 0.3);
         overflow: hidden;
-        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+        transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
 
     .offer-card.animate-on-scroll {
@@ -363,46 +418,102 @@ body {
     .offer-card::before {
         content: '';
         position: absolute;
-        inset: 0;
-        background: linear-gradient(135deg, rgba(255, 123, 183, 0.08), rgba(255, 154, 213, 0.15));
+        inset: -2px;
+        background: linear-gradient(135deg, 
+            rgba(255, 105, 180, 0.4) 0%, 
+            rgba(255, 182, 193, 0.3) 25%,
+            rgba(218, 112, 214, 0.35) 50%,
+            rgba(255, 20, 147, 0.3) 100%);
+        background-size: 200% 200%;
+        border-radius: 28px;
         opacity: 0;
-        transition: opacity 0.3s ease;
+        transition: opacity 0.5s ease;
+        animation: gradientRotate 3s ease infinite;
+        z-index: -1;
+        filter: blur(10px);
+    }
+
+    @keyframes gradientRotate {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
     }
 
     .offer-card:hover::before {
         opacity: 1;
     }
 
+    .offer-card::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at var(--mouse-x, 50%) var(--mouse-y, 50%), 
+            rgba(255, 255, 255, 0.2) 0%, 
+            transparent 50%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        pointer-events: none;
+    }
+
+    .offer-card:hover::after {
+        opacity: 1;
+    }
+
     .offer-card:hover {
-        transform: translateY(-8px) scale(1.01);
-        box-shadow: 0 18px 40px rgba(255, 123, 183, 0.2);
+        transform: translateY(-12px) scale(1.03) rotateX(2deg);
+        box-shadow: 
+            0 25px 60px rgba(255, 105, 180, 0.35),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8),
+            0 0 40px rgba(255, 105, 180, 0.3);
+        border-color: rgba(255, 255, 255, 0.8);
     }
 
     .offer-chip {
         position: absolute;
-        top: 14px;
-        left: 14px;
-        background: rgba(255, 255, 255, 0.85);
-        color: var(--pink-3);
-        padding: 0.35rem 0.75rem;
+        top: 16px;
+        left: 16px;
+        background: rgba(255, 255, 255, 0.4);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        color: #ff1493;
+        padding: 0.45rem 1rem;
         border-radius: 999px;
-        font-weight: 700;
+        font-weight: 800;
         font-size: 0.8rem;
-        border: 1px solid rgba(255, 123, 183, 0.3);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 
+            0 4px 15px rgba(255, 105, 180, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.8);
+        z-index: 2;
+        animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
     }
 
     .offer-badge {
         position: absolute;
-        top: 14px;
-        right: 14px;
-        background: linear-gradient(135deg, var(--pink-1), var(--pink-2));
+        top: 16px;
+        right: 16px;
+        background: linear-gradient(135deg, #ff1493 0%, #ff69b4 50%, #da70d6 100%);
+        background-size: 200% 200%;
+        animation: gradientShift 3s ease infinite;
         color: white;
-        padding: 0.35rem 0.8rem;
+        padding: 0.45rem 1rem;
         border-radius: 999px;
-        font-weight: 700;
-        font-size: 0.85rem;
-        box-shadow: 0 10px 25px rgba(255, 123, 183, 0.25);
+        font-weight: 800;
+        font-size: 0.9rem;
+        box-shadow: 
+            0 8px 25px rgba(255, 20, 147, 0.4),
+            inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        z-index: 2;
+        transform-style: preserve-3d;
+    }
+
+    @keyframes gradientShift {
+        0%, 100% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
     }
 
     .offer-body {
@@ -800,61 +911,86 @@ body {
 
 .products {
     padding: 5rem 5%;
-    background: linear-gradient(180deg, rgba(248,249,250,0.9) 0%, rgba(255,255,255,0.9) 100%);
-    animation: fadeIn 1s ease-in;
+    background: linear-gradient(135deg, 
+        rgba(255, 250, 245, 1) 0%, 
+        rgba(255, 240, 250, 1) 20%,
+        rgba(245, 245, 255, 1) 40%,
+        rgba(255, 245, 250, 1) 60%,
+        rgba(250, 250, 255, 1) 80%,
+        rgba(255, 250, 245, 1) 100%);
+    background-size: 400% 400%;
+    animation: gradientFlow 20s ease infinite;
     position: relative;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
 }
 
 .products::before {
-    content: '🌺';
+    content: '🌸';
     position: absolute;
-    top: 10%;
-    right: 5%;
-    font-size: 5rem;
-    opacity: 0.1;
-    animation: float 4s ease-in-out infinite;
+    top: 5%;
+    left: 3%;
+    font-size: 6rem;
+    opacity: 0.15;
+    animation: float 8s ease-in-out infinite, rotateFlower 15s linear infinite;
 }
 
 .products::after {
-    content: '🌷';
+    content: '🌺';
     position: absolute;
-    bottom: 10%;
-    left: 5%;
-    font-size: 5rem;
-    opacity: 0.1;
-    animation: float 5s ease-in-out infinite 1s;
+    bottom: 5%;
+    right: 3%;
+    font-size: 7rem;
+    opacity: 0.15;
+    animation: float 10s ease-in-out infinite 2s, rotateFlower 20s linear infinite reverse;
 }
 
 .products h2 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 3.5rem;
     margin-bottom: 3rem;
-    color: var(--text-deep);
-    animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    background: linear-gradient(135deg, 
+        #ff1493 0%, 
+        #ff69b4 20%,
+        #da70d6 40%,
+        #ff6347 60%,
+        #ffa500 80%,
+        #ff1493 100%);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: rainbowFlow 5s ease infinite;
+    font-weight: 800;
     position: relative;
     display: inline-block;
     left: 50%;
     transform: translateX(-50%);
-    transition: transform 0.3s ease;
+    letter-spacing: -1px;
+    text-shadow: 0 0 40px rgba(255, 105, 180, 0.4);
 }
 
 .products h2:hover {
     transform: translateX(-50%) scale(1.05);
 }
 
-.products h2::after {
-    content: '';
+.products h2::before {
+    content: '🌼';
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--pink-1), var(--pink-2));
-    border-radius: 2px;
-    animation: slideInScale 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s backwards;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+.products h2::after {
+    content: '🌻';
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2.5rem;
+    animation: bounce 2s ease-in-out infinite 1s;
 }
 
 .product-tools {
@@ -902,26 +1038,44 @@ body {
 
 .product-badge {
     position: absolute;
-    top: 12px;
-    left: 12px;
-    background: linear-gradient(135deg, var(--pink-1), var(--pink-2));
-    color: white;
-    padding: 0.35rem 0.75rem;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    box-shadow: 0 10px 25px rgba(255, 123, 183, 0.2);
-    z-index: 3;
+    top: 14px;
+    left: 14px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: #ff1493;
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 0.85rem;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 
+        0 6px 25px rgba(255, 105, 180, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9);
+    z-index: 4;
+    animation: shimmer 3s ease-in-out infinite;
 }
 
 .product-card {
     min-width: 350px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border: 2px solid transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4)),
+                      linear-gradient(135deg, 
+                        rgba(255, 105, 180, 0.7), 
+                        rgba(255, 182, 193, 0.6),
+                        rgba(218, 112, 214, 0.6),
+                        rgba(255, 105, 180, 0.7));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 
+        0 12px 45px rgba(255, 105, 180, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.7),
+        0 0 0 1px rgba(255, 255, 255, 0.4);
     scroll-snap-align: center;
     transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards;
@@ -941,43 +1095,50 @@ body {
 .product-card::before {
     content: '';
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.3), 
-        transparent);
-    transition: left 0.7s;
-    z-index: 1;
+    inset: -4px;
+    background: linear-gradient(135deg, 
+        #ff1493 0%, 
+        #ff69b4 25%,
+        #da70d6 50%,
+        #ffa500 75%,
+        #ff1493 100%);
+    background-size: 300% 300%;
+    border-radius: 24px;
+    opacity: 0;
+    z-index: -1;
+    animation: gradientRotate 4s ease infinite;
+    filter: blur(15px);
+    transition: opacity 0.5s ease;
 }
 
 .product-card:hover::before {
-    left: 100%;
+    opacity: 0.9;
 }
 
 .product-card::after {
-    content: '';
+    content: '✨';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 20px;
+    top: 14px;
+    right: 14px;
+    font-size: 1.8rem;
     opacity: 0;
-    box-shadow: 0 0 0 3px var(--pink-1);
-    transition: opacity 0.3s;
+    transform: scale(0) rotate(-45deg);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 5;
     pointer-events: none;
 }
 
 .product-card:hover::after {
     opacity: 1;
+    transform: scale(1) rotate(0deg);
 }
 
 .product-card:hover {
-    transform: translateY(-15px) scale(1.03);
-    box-shadow: 0 20px 50px rgba(255, 123, 183, 0.25);
+    transform: translateY(-18px) scale(1.05) rotateX(2deg);
+    box-shadow: 
+        0 25px 70px rgba(255, 105, 180, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 0 80px rgba(255, 105, 180, 0.4);
 }
 
 .product-image {
