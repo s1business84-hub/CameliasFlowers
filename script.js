@@ -176,7 +176,10 @@ function renderProducts(list) {
                 <h3 class="product-name">${product.name}</h3>
                 <p class="product-description">${product.description}</p>
                 <p class="product-price">AED ${product.price}</p>
-                <button class="add-to-cart" onclick="orderViaWhatsApp('${product.name}', ${product.price})">💬 Order via WhatsApp</button>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <button class="add-to-cart" style="flex: 1; min-width: 120px;" onclick="orderViaWhatsApp('${product.name}', ${product.price})">💬 WhatsApp</button>
+                    <button class="add-to-cart" style="flex: 1; min-width: 120px; background: #FF5A00;" onclick="orderViaTalabat('${product.name}')">🛵 Talabat</button>
+                </div>
             </div>
         `;
         grid.appendChild(card);
@@ -216,6 +219,87 @@ function orderViaWhatsApp(productName, price) {
     );
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
 }
+
+// Order via Talabat with tracking
+function orderViaTalabat(productName = null) {
+    const whatsappNumber = '971507056500';
+    const talabatUrl = 'https://pzwv.adj.st/?s=s&v=627632&c=ae&adj_t=1nid2lpq_1no0at5h&adj_campaign=google_reserve_place_order_action_CH-SEO_&adj_deep_link=talabat%3A%2F%2F%3Fs%3Ds%26v%3D627632%26c%3Dae&adj_fallback=https://www.talabat.com/uae/restaurant/643937/camellia-flowers-muwaileh-commercial?s=s&v=627632&c=ae&adj_t=1nid2lpq_1no0at5h&adj_campaign=google_reserve_place_order_action_CH-SEO_&adj_deep_link=talabat%3A%2F%2F%3Fs%3Ds%26v%3D627632%26c%3Dae&adj_fallback=https://www.talabat.com/uae/restaurant/643937/camellia-flowers-muwaileh-commercial?utm_campaign=google_reserve_place_order_action_CH-SEO_&adj_redirect_macos=https://www.talabat.com/uae/restaurant/643937/camellia-flowers-muwaileh-commercial?utm_campaign=google_reserve_place_order_action_CH-SEO_&adjust_deeplink_js=1';
+    
+    // Get timestamp and generate tracking ID
+    const timestamp = new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' });
+    const trackingId = 'WEB-' + Date.now();
+    
+    // Store in localStorage for tracking
+    localStorage.setItem('talabatRedirect', JSON.stringify({
+        trackingId: trackingId,
+        timestamp: timestamp,
+        product: productName,
+        source: 'website'
+    }));
+    
+    // Notify via WhatsApp about customer coming from website
+    const notificationMessage = encodeURIComponent(
+        `🚨 TALABAT ORDER ALERT\n\n` +
+        `📋 Tracking ID: ${trackingId}\n` +
+        `🌐 Source: Website\n` +
+        `⏰ Time: ${timestamp}\n` +
+        `${productName ? `🌸 Product Interest: ${productName}\n` : ''}\n` +
+        `Customer is being redirected to Talabat from our website.\n\n` +
+        `Please track this order!`
+    );
+    
+    // Send notification to WhatsApp (non-blocking)
+    const notifyUrl = `https://wa.me/${whatsappNumber}?text=${notificationMessage}`;
+    
+    // Open notification in background (optional - can be removed if too intrusive)
+    const notifyWindow = window.open(notifyUrl, '_blank', 'width=1,height=1');
+    if (notifyWindow) {
+        setTimeout(() => notifyWindow.close(), 2000);
+    }
+    
+    // Show user notification
+    showNotification('Redirecting to Talabat... Order will be tracked!');
+    
+    // Redirect to Talabat after short delay
+    setTimeout(() => {
+        window.open(talabatUrl, '_blank');
+    }, 1000);
+}
+
+// Track returning customers from Talabat
+function checkTalabatReturn() {
+    const talabatData = localStorage.getItem('talabatRedirect');
+    if (talabatData) {
+        const data = JSON.parse(talabatData);
+        const timeDiff = Date.now() - parseInt(data.trackingId.replace('WEB-', ''));
+        
+        // If returning within 1 hour, assume they might place order
+        if (timeDiff < 3600000) {
+            const whatsappNumber = '971507056500';
+            const returnMessage = encodeURIComponent(
+                `👤 CUSTOMER RETURNED FROM TALABAT\n\n` +
+                `📋 Tracking ID: ${data.trackingId}\n` +
+                `🔄 Return Time: ${new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' })}\n` +
+                `⏱️ Time Spent: ${Math.round(timeDiff / 60000)} minutes\n\n` +
+                `Customer may have placed an order or needs assistance!`
+            );
+            
+            // Optional: Send return notification
+            // Commented out to avoid spam, but can be enabled
+            // window.open(`https://wa.me/${whatsappNumber}?text=${returnMessage}`, '_blank', 'width=1,height=1');
+        }
+        
+        // Clear after 24 hours
+        if (timeDiff > 86400000) {
+            localStorage.removeItem('talabatRedirect');
+        }
+    }
+}
+
+// Check on page load
+document.addEventListener('DOMContentLoaded', () => {
+    checkTalabatReturn();
+});
 
 // Update cart count
 function updateCartCount() {
@@ -777,11 +861,13 @@ function displayRecommendations(recommendations) {
                     </div>
                     
                     <div class="recommendation-actions">
-                        <a href="#products" class="btn-customize">Customize</a>
+                        <a href="javascript:void(0)" onclick="orderViaTalabat('${product.name}')" class="btn-talabat" style="background: #FF5A00; color: white; border: none;">
+                            <span>🛵</span> Talabat
+                        </a>
                         <a href="https://wa.me/${whatsappNumber}?text=${whatsappMessage}" 
                            target="_blank" 
                            class="btn-whatsapp">
-                            <span>💬</span> WhatsApp Order
+                            <span>💬</span> WhatsApp
                         </a>
                     </div>
                     

@@ -20,6 +20,7 @@
             </ul>
             <div class="nav-actions">
                 <a href="tel:+971507056500" class="phone-link">📞 050 705 6500</a>
+                <a href="javascript:void(0)" onclick="orderViaTalabat()" class="talabat-link">🛵 Order on Talabat</a>
                 <a href="login.html" class="login-link">Login</a>
                 <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
             </div>
@@ -34,6 +35,7 @@
                 <p class="hero-subtitle">Handcrafted by Expert Florists | Same-Day Delivery Across UAE</p>
                 <div class="hero-buttons">
                     <button class="btn btn-primary" onclick="scrollToProducts()">SHOP NOW</button>
+                    <button class="btn btn-talabat" onclick="orderViaTalabat()">🛵 ORDER ON TALABAT</button>
                     <button class="btn btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">CUSTOM ORDERS</button>
                 </div>
             </div>
@@ -310,6 +312,12 @@
 
     <div class="cart-modal" id="cart-modal">
         <!-- Cart content here -->
+    </div>
+
+    <!-- Floating Talabat Button -->
+    <div class="floating-talabat-btn" onclick="orderViaTalabat()" title="Order on Talabat">
+        <span class="talabat-icon">🛵</span>
+        <span class="talabat-text">Talabat</span>
     </div>
 
     <script src="script.js"></script>
