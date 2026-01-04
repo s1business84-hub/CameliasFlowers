@@ -4,55 +4,73 @@ const products = [
         id: 1,
         name: "Red Roses Bouquet",
         description: "Classic red roses, perfect for any occasion",
+        longDescription: "Our signature red roses are handpicked from premium farms and arranged by expert florists. Each bouquet contains 12-24 long-stemmed roses, perfectly complemented with baby's breath and lush greenery. The deep crimson petals symbolize love, respect, and admiration, making them ideal for romantic gestures, anniversaries, or expressing heartfelt emotions.",
         price: 150,
         category: "Roses",
         tags: ["romantic", "anniversary"],
-        image: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=800&q=80"
+        image: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=1200&q=80",
+        careInstructions: "Trim stems at 45° angle, change water daily, keep away from direct sunlight. Roses will last 5-7 days with proper care.",
+        features: ["12-24 Premium Long-Stemmed Roses", "Hand-Tied by Expert Florists", "Includes Baby's Breath & Greenery", "Same-Day Delivery Available", "Perfect for Romance & Celebrations"]
     },
     {
         id: 2,
         name: "Sunflower Delight",
         description: "Bright sunflowers to light up your day",
+        longDescription: "Radiate joy with our stunning sunflower arrangements! These cheerful blooms are sourced from the finest growers and arranged to capture the warmth of summer sunshine year-round. Each sunflower is carefully selected for its vibrant yellow petals and strong stems, creating a bouquet that brings instant happiness to any space.",
         price: 120,
         category: "Sunflowers",
         tags: ["cheerful", "birthday"],
-        image: "https://images.unsplash.com/photo-1597848212624-e530265c9a74?w=800&q=80"
+        image: "https://images.unsplash.com/photo-1597848212624-e530265c9a74?w=1200&q=80",
+        careInstructions: "Cut stems underwater, use flower food, change water every 2-3 days. Sunflowers last 7-10 days.",
+        features: ["8-12 Premium Sunflowers", "Mixed with Complementary Fillers", "Bright & Cheerful Design", "Delivered Fresh Daily", "Ideal for Birthdays & Get Well Soon"]
     },
     {
         id: 3,
         name: "Tulip Collection",
         description: "Elegant tulips in vibrant colors",
+        longDescription: "Experience the timeless elegance of Dutch tulips with our carefully curated collection. Available in stunning color combinations - from classic reds and yellows to romantic pinks and whites - each tulip is imported fresh and arranged to showcase their graceful curves and vibrant hues. Perfect for adding a touch of spring sophistication to any occasion.",
         price: 135,
         category: "Tulips",
         tags: ["spring", "thank you"],
-        image: "https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?w=800&q=80"
+        image: "https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?w=1200&q=80",
+        careInstructions: "Keep water level low (2-3 inches), re-cut stems every few days, tulips continue to grow in vase.",
+        features: ["15-20 Premium Dutch Tulips", "Choice of Color Combinations", "Elegant Hand-Wrapped Presentation", "Fresh Import Guarantee", "Perfect for Thank You & Appreciation"]
     },
     {
         id: 4,
         name: "Orchid Elegance",
         description: "Exotic orchids for special moments",
+        longDescription: "Elevate any space with our exquisite orchid arrangements. These exotic blooms represent luxury, beauty, and strength. Our Phalaenopsis orchids are carefully selected for their pristine petals and long-lasting quality. Available in elegant whites, passionate purples, and vibrant pinks, they're perfect for corporate gifts, upscale events, or making a sophisticated statement.",
         price: 200,
         category: "Orchids",
         tags: ["luxury", "gifting"],
-        image: "https://images.unsplash.com/photo-1594878072478-d80089fcbea2?w=800&q=80"
+        image: "https://images.unsplash.com/photo-1594878072478-d80089fcbea2?w=1200&q=80",
+        careInstructions: "Water once weekly, provide indirect sunlight, mist occasionally. Orchids can bloom for 2-3 months.",
+        features: ["Premium Phalaenopsis Orchids", "Long-Lasting Blooms (2-3 Months)", "Elegant Ceramic Pot Included", "Multiple Color Options", "Ideal for Luxury Gifts & Corporate Events"]
     },
     {
         id: 5,
         name: "Mixed Bouquet",
         description: "Beautiful mix of seasonal flowers",
+        longDescription: "Let our expert florists create magic with our signature mixed bouquet! This stunning arrangement combines the best seasonal blooms in harmonious colors and textures. Each bouquet is uniquely crafted featuring roses, lilies, gerberas, and premium fillers, ensuring a one-of-a-kind gift that celebrates life's special moments with style and grace.",
         price: 160,
         category: "Mixed",
         tags: ["seasonal", "versatile"],
-        image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=800&q=80"
+        image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=1200&q=80",
+        careInstructions: "Mix flower food with water, remove wilted blooms, re-cut stems every 2-3 days. Lasts 5-7 days.",
+        features: ["Designer's Choice Premium Flowers", "Seasonal Best Selection", "Harmonious Color Palette", "Unique Every Time", "Versatile for Any Occasion"]
     },
     {
         id: 6,
         name: "Lily Paradise",
         description: "Fresh white lilies for purity and elegance",
+        longDescription: "Immerse yourself in the serene beauty of our lily paradise arrangements. These stunning oriental lilies feature large, fragrant blooms that symbolize purity, commitment, and rebirth. Each stem is carefully selected for its pristine white petals and intoxicating fragrance, making them perfect for weddings, sympathy arrangements, or creating an atmosphere of peaceful elegance.",
         price: 145,
         category: "Lilies",
         tags: ["pure", "elegant"],
-        image: "https://images.unsplash.com/photo-1569583191587-ae7a8cdad498?w=800&q=80"
+        image: "https://images.unsplash.com/photo-1569583191587-ae7a8cdad498?w=1200&q=80",
+        careInstructions: "Remove pollen stamens to prevent staining, change water frequently, lilies last 7-14 days.",
+        features: ["6-10 Oriental Lily Stems", "Large Fragrant Blooms", "Pristine White Petals", "Long-Lasting Quality", "Perfect for Weddings & Sympathy"]
     }
 ];
 
@@ -61,41 +79,57 @@ const seasonalDeals = [
         id: 'winter-romance',
         title: 'Winter Romance',
         description: 'Snowy whites with blush roses and eucalyptus.',
+        longDescription: 'Embrace the magic of winter with our exclusive Winter Romance collection. This exquisite arrangement features pristine white roses delicately accented with soft blush pink tones, complemented by aromatic eucalyptus leaves that evoke the crisp freshness of a winter morning. Each element is carefully selected to create a harmonious blend of elegance and seasonal charm.',
         discount: 15,
         price: 199,
+        originalPrice: 234,
         code: 'WINTER15',
         validThrough: 'Jan 31',
-        image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&q=80',
+        includes: ['15-20 White & Blush Roses', 'Premium Eucalyptus Branches', 'Seasonal Winter Greenery', 'Elegant Gift Wrapping', 'Complimentary Care Instructions Card'],
+        occasions: ['Winter Celebrations', 'Elegant Dinner Parties', 'Anniversary', 'Romantic Gestures']
     },
     {
         id: 'lunar-blooms',
         title: 'Lunar New Year Blooms',
         description: 'Lucky reds and gold accents for celebration.',
+        longDescription: 'Welcome prosperity and good fortune with our spectacular Lunar New Year collection. This vibrant arrangement showcases brilliant red blooms symbolizing luck and happiness, adorned with luxurious gold accents and traditional elements. Created to honor Asian traditions while celebrating new beginnings, this arrangement brings blessings and joy to your celebrations.',
         discount: 18,
         price: 220,
+        originalPrice: 268,
         code: 'LUNAR18',
         validThrough: 'Feb 15',
-        image: 'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=1200&q=80',
+        includes: ['Premium Red Roses & Carnations', 'Gold-Accented Decorations', 'Lucky Bamboo Elements', 'Traditional Red & Gold Wrapping', 'Prosperity Blessing Card'],
+        occasions: ['Lunar New Year', 'Chinese New Year', 'Family Gatherings', 'Business Openings', 'Prosperity Wishes']
     },
     {
         id: 'valentine-lux',
         title: 'Valentine Luxe Box',
         description: 'Signature roses with artisan chocolates.',
+        longDescription: 'Indulge your loved one with our ultra-premium Valentine\'s Luxe Box - a sophisticated combination of our finest long-stemmed roses paired with artisan Belgian chocolates. Each rose is selected for its perfect form and deep crimson color, elegantly arranged in a luxury presentation box. The accompanying chocolates are handcrafted with premium ingredients, creating an unforgettable expression of love.',
         discount: 20,
         price: 260,
+        originalPrice: 325,
         code: 'LOVE20',
         validThrough: 'Feb 14',
-        image: 'https://images.unsplash.com/photo-1515163992168-c0b13d3b0a6a?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1515163992168-c0b13d3b0a6a?w=1200&q=80',
+        includes: ['24 Premium Long-Stemmed Red Roses', 'Artisan Belgian Chocolate Selection', 'Luxury Presentation Box', 'Personalized Love Note', 'Silk Ribbon & Gold Accents'],
+        occasions: ['Valentine\'s Day', 'Marriage Proposals', 'Anniversaries', 'Ultimate Romantic Gestures']
     },
     {
         id: 'spring-awakening',
         title: 'Spring Awakening',
         description: 'Tulips, peonies, and hyacinth in pastel palette.',
+        longDescription: 'Celebrate the renewal of spring with our breathtaking Spring Awakening collection. This enchanting arrangement features a dreamy combination of Dutch tulips, lush peonies, and fragrant hyacinths in a soft pastel color palette. Each bloom represents new beginnings, growth, and the joy of warmer days ahead. Perfect for bringing the beauty of spring gardens into your home.',
         discount: 12,
         price: 185,
+        originalPrice: 210,
         code: 'SPRING12',
         validThrough: 'Mar 30',
-        image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80'
+        image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80',
+        includes: ['Fresh Dutch Tulips', 'Seasonal Peonies', 'Fragrant Hyacinths', 'Spring Garden Fillers', 'Rustic Kraft Wrapping'],
+        occasions: ['Spring Celebrations', 'Easter', 'Mother\'s Day', 'New Beginnings', 'Garden Parties']
     }
 ];
 
@@ -128,9 +162,9 @@ function renderOffers() {
     if (!container) return;
 
     container.innerHTML = seasonalDeals.map(deal => `
-        <div class="offer-card animate-on-scroll">
+        <div class="offer-card animate-on-scroll" onclick="showOfferDetail('${deal.id}')" style="cursor: pointer;">
             <div class="offer-image">
-                <img src="${deal.image}" alt="${deal.title}">
+                <img src="${deal.image}" alt="${deal.title}" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80'">
                 <div class="offer-badge">${deal.discount}% OFF</div>
             </div>
             <div class="offer-chip">Seasonal</div>
@@ -144,8 +178,8 @@ function renderOffers() {
                 <div class="offer-footer">
                     <span class="offer-valid">Valid until ${deal.validThrough}</span>
                     <div class="offer-actions">
-                        <button class="copy-code" onclick="copyPromo('${deal.code}')">Copy code</button>
-                        <button class="offer-cta" onclick="scrollToProducts()">Shop this</button>
+                        <button class="copy-code" onclick="event.stopPropagation(); copyPromo('${deal.code}')">Copy code</button>
+                        <button class="offer-cta" onclick="event.stopPropagation(); showOfferDetail('${deal.id}')">View Details</button>
                     </div>
                 </div>
             </div>
@@ -176,19 +210,22 @@ function renderProducts(list) {
     list.forEach((product) => {
         const card = document.createElement('div');
         card.className = 'product-card';
+        card.style.cursor = 'pointer';
         card.innerHTML = `
             <div class="product-badge">${product.category}</div>
-            <img src="${product.image}" alt="${product.name}" class="product-image">
+            <img src="${product.image}" alt="${product.name}" class="product-image" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=1200&q=80'">
             <div class="product-info">
                 <h3 class="product-name">${product.name}</h3>
                 <p class="product-description">${product.description}</p>
                 <p class="product-price">AED ${product.price}</p>
                 <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
-                    <button class="add-to-cart" style="flex: 1; min-width: 120px;" onclick="orderViaWhatsApp('${product.name}', ${product.price})">💬 WhatsApp</button>
-                    <button class="add-to-cart" style="flex: 1; min-width: 120px; background: #FF5A00;" onclick="orderViaTalabat('${product.name}')">🛵 Talabat</button>
+                    <button class="add-to-cart" style="flex: 1; min-width: 120px;" onclick="event.stopPropagation(); orderViaWhatsApp('${product.name}', ${product.price})">💬 WhatsApp</button>
+                    <button class="add-to-cart" style="flex: 1; min-width: 120px; background: #FF5A00;" onclick="event.stopPropagation(); orderViaTalabat('${product.name}')">🛵 Talabat</button>
                 </div>
+                <button class="view-details-btn" onclick="event.stopPropagation(); showProductDetail(${product.id})" style="width: 100%; margin-top: 0.5rem; background: linear-gradient(135deg, #8b008b, #ff1493); color: white; border: none; padding: 0.7rem; border-radius: 8px; cursor: pointer; font-weight: 600;">View Full Details</button>
             </div>
         `;
+        card.onclick = () => showProductDetail(product.id);
         grid.appendChild(card);
     });
 }
@@ -1040,6 +1077,183 @@ function toggleLanguage() {
 document.addEventListener('DOMContentLoaded', function() {
     if (currentLanguage === 'ar') {
         toggleLanguage();
+    }
+});
+
+// ============================================
+// DETAIL MODAL FUNCTIONS
+// ============================================
+
+function showProductDetail(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+    
+    const modalBody = document.getElementById('detail-modal-body');
+    modalBody.innerHTML = `
+        <div class="detail-grid">
+            <div class="detail-image-section">
+                <img src="${product.image}" alt="${product.name}" class="detail-main-image" onerror="this.src='https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=1200&q=80'">
+                <div class="detail-badge-overlay">${product.category}</div>
+            </div>
+            
+            <div class="detail-info-section">
+                <div class="detail-header">
+                    <h2 class="detail-title">${product.name}</h2>
+                    <div class="detail-price-box">
+                        <span class="detail-price">AED ${product.price}</span>
+                        <span class="detail-price-label">Starting from</span>
+                    </div>
+                </div>
+                
+                <div class="detail-tags">
+                    ${product.tags.map(tag => `<span class="detail-tag">${tag}</span>`).join('')}
+                </div>
+                
+                <div class="detail-description">
+                    <h3>About This Arrangement</h3>
+                    <p>${product.longDescription}</p>
+                </div>
+                
+                <div class="detail-features">
+                    <h3>What's Included</h3>
+                    <ul class="detail-features-list">
+                        ${product.features.map(feature => `<li><span class="feature-icon">✓</span> ${feature}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="detail-care">
+                    <h3>Care Instructions</h3>
+                    <p class="care-text">${product.careInstructions}</p>
+                </div>
+                
+                <div class="detail-actions">
+                    <button class="detail-btn detail-btn-whatsapp" onclick="orderViaWhatsApp('${product.name}', ${product.price})">
+                        <span>💬</span>
+                        <span>Order via WhatsApp</span>
+                    </button>
+                    <button class="detail-btn detail-btn-talabat" onclick="orderViaTalabat('${product.name}')">
+                        <span>🛵</span>
+                        <span>Order on Talabat</span>
+                    </button>
+                </div>
+                
+                <div class="detail-guarantee">
+                    <div class="guarantee-item">
+                        <span class="guarantee-icon">🚚</span>
+                        <span>Same-Day Delivery Available</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="guarantee-icon">🌺</span>
+                        <span>100% Fresh Guarantee</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="guarantee-icon">💝</span>
+                        <span>Gift Wrapping Included</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    const modal = document.getElementById('detail-modal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function showOfferDetail(offerId) {
+    const offer = seasonalDeals.find(o => o.id === offerId);
+    if (!offer) return;
+    
+    const modalBody = document.getElementById('detail-modal-body');
+    modalBody.innerHTML = `
+        <div class="detail-grid">
+            <div class="detail-image-section">
+                <img src="${offer.image}" alt="${offer.title}" class="detail-main-image" onerror="this.src='https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=80'">
+                <div class="detail-badge-overlay seasonal-badge">${offer.discount}% OFF</div>
+                <div class="detail-seasonal-chip">SEASONAL SPECIAL</div>
+            </div>
+            
+            <div class="detail-info-section">
+                <div class="detail-header">
+                    <h2 class="detail-title">${offer.title}</h2>
+                    <div class="detail-price-box">
+                        <span class="detail-price">AED ${offer.price}</span>
+                        <span class="detail-original-price">AED ${offer.originalPrice}</span>
+                    </div>
+                </div>
+                
+                <div class="detail-promo-code">
+                    <div class="promo-code-label">Limited Time Promo Code</div>
+                    <div class="promo-code-box">
+                        <span class="promo-code-text">${offer.code}</span>
+                        <button class="promo-copy-btn" onclick="copyPromo('${offer.code}')">Copy</button>
+                    </div>
+                    <div class="promo-valid">Valid until ${offer.validThrough}</div>
+                </div>
+                
+                <div class="detail-description">
+                    <h3>Collection Details</h3>
+                    <p>${offer.longDescription}</p>
+                </div>
+                
+                <div class="detail-features">
+                    <h3>This Collection Includes</h3>
+                    <ul class="detail-features-list">
+                        ${offer.includes.map(item => `<li><span class="feature-icon">✓</span> ${item}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="detail-occasions">
+                    <h3>Perfect For</h3>
+                    <div class="occasions-tags">
+                        ${offer.occasions.map(occasion => `<span class="occasion-tag">${occasion}</span>`).join('')}
+                    </div>
+                </div>
+                
+                <div class="detail-actions">
+                    <button class="detail-btn detail-btn-whatsapp" onclick="orderViaWhatsApp('${offer.title}', ${offer.price})">
+                        <span>💬</span>
+                        <span>Order via WhatsApp</span>
+                    </button>
+                    <button class="detail-btn detail-btn-talabat" onclick="orderViaTalabat('${offer.title}')">
+                        <span>🛵</span>
+                        <span>Order on Talabat</span>
+                    </button>
+                </div>
+                
+                <div class="detail-guarantee">
+                    <div class="guarantee-item">
+                        <span class="guarantee-icon">⏰</span>
+                        <span>Limited Time Offer - Order Now!</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="guarantee-icon">🎁</span>
+                        <span>Premium Gift Packaging</span>
+                    </div>
+                    <div class="guarantee-item">
+                        <span class="guarantee-icon">💯</span>
+                        <span>Save ${offer.discount}% Today</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    const modal = document.getElementById('detail-modal');
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeDetailModal() {
+    const modal = document.getElementById('detail-modal');
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Close modal on escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeDetailModal();
     }
 });
 

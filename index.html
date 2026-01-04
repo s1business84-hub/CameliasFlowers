@@ -379,6 +379,17 @@
         <!-- Cart content here -->
     </div>
 
+    <!-- Detail Modal -->
+    <div class="detail-modal" id="detail-modal">
+        <div class="detail-modal-overlay" onclick="closeDetailModal()"></div>
+        <div class="detail-modal-content">
+            <button class="detail-close-btn" onclick="closeDetailModal()">✕</button>
+            <div class="detail-modal-body" id="detail-modal-body">
+                <!-- Detail content will be injected here -->
+            </div>
+        </div>
+    </div>
+
     <!-- Floating Talabat Button -->
     <div class="floating-talabat-btn" onclick="orderViaTalabat()" title="Order on Talabat">
         <span class="talabat-icon">🛵</span>
