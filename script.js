@@ -8,8 +8,8 @@ const products = [
         price: 150,
         category: "Roses",
         tags: ["romantic", "anniversary"],
-        image: "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=1200&q=90&auto=format&fit=crop",
-        fallbackImage: "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=900&q=80&auto=format&fit=crop",
+        image: "assets/images/products/roses.jpg",
+        fallbackImage: "assets/images/products/roses.jpg",
         careInstructions: "Trim stems at 45° angle, change water daily, keep away from direct sunlight. Roses will last 5-7 days with proper care.",
         features: ["12-24 Premium Long-Stemmed Roses", "Hand-Tied by Expert Florists", "Includes Baby's Breath & Greenery", "Same-Day Delivery Available", "Perfect for Romance & Celebrations"]
     },
@@ -21,8 +21,8 @@ const products = [
         price: 120,
         category: "Sunflowers",
         tags: ["cheerful", "birthday"],
-        image: "https://images.unsplash.com/photo-1502309526941-4ffa1f976776?w=1200&q=90&auto=format&fit=crop",
-        fallbackImage: "https://images.unsplash.com/photo-1502309526941-4ffa1f976776?w=900&q=80&auto=format&fit=crop",
+        image: "assets/images/products/sunflower.jpg",
+        fallbackImage: "assets/images/products/sunflower.jpg",
         careInstructions: "Cut stems underwater, use flower food, change water every 2-3 days. Sunflowers last 7-10 days.",
         features: ["8-12 Premium Sunflowers", "Mixed with Complementary Fillers", "Bright & Cheerful Design", "Delivered Fresh Daily", "Ideal for Birthdays & Get Well Soon"]
     },
@@ -34,8 +34,8 @@ const products = [
         price: 135,
         category: "Tulips",
         tags: ["spring", "thank you"],
-        image: "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=1200&q=90&auto=format&fit=crop",
-        fallbackImage: "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=900&q=80&auto=format&fit=crop",
+        image: "assets/images/products/tulips.jpg",
+        fallbackImage: "assets/images/products/tulips.jpg",
         careInstructions: "Keep water level low (2-3 inches), re-cut stems every few days, tulips continue to grow in vase.",
         features: ["15-20 Premium Dutch Tulips", "Choice of Color Combinations", "Elegant Hand-Wrapped Presentation", "Fresh Import Guarantee", "Perfect for Thank You & Appreciation"]
     },
@@ -47,8 +47,8 @@ const products = [
         price: 200,
         category: "Orchids",
         tags: ["luxury", "gifting"],
-        image: "https://images.unsplash.com/photo-1551131618-3f0a4752c0bc?w=1200&q=90&auto=format&fit=crop",
-        fallbackImage: "https://images.unsplash.com/photo-1551131618-3f0a4752c0bc?w=900&q=80&auto=format&fit=crop",
+        image: "assets/images/products/orchids.jpg",
+        fallbackImage: "assets/images/products/orchids.jpg",
         careInstructions: "Water once weekly, provide indirect sunlight, mist occasionally. Orchids can bloom for 2-3 months.",
         features: ["Premium Phalaenopsis Orchids", "Long-Lasting Blooms (2-3 Months)", "Elegant Ceramic Pot Included", "Multiple Color Options", "Ideal for Luxury Gifts & Corporate Events"]
     },
@@ -60,8 +60,8 @@ const products = [
         price: 160,
         category: "Mixed",
         tags: ["seasonal", "versatile"],
-        image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=1200&q=90&auto=format&fit=crop",
-        fallbackImage: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=900&q=80&auto=format&fit=crop",
+        image: "assets/images/products/mixed.jpg",
+        fallbackImage: "assets/images/products/mixed.jpg",
         careInstructions: "Mix flower food with water, remove wilted blooms, re-cut stems every 2-3 days. Lasts 5-7 days.",
         features: ["Designer's Choice Premium Flowers", "Seasonal Best Selection", "Harmonious Color Palette", "Unique Every Time", "Versatile for Any Occasion"]
     },
@@ -73,8 +73,8 @@ const products = [
         price: 145,
         category: "Lilies",
         tags: ["pure", "elegant"],
-        image: "https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=1200&q=90&auto=format&fit=crop",
-        fallbackImage: "https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=900&q=80&auto=format&fit=crop",
+        image: "assets/images/products/lilies.jpg",
+        fallbackImage: "assets/images/products/lilies.jpg",
         careInstructions: "Remove pollen stamens to prevent staining, change water frequently, lilies last 7-14 days.",
         features: ["6-10 Oriental Lily Stems", "Large Fragrant Blooms", "Pristine White Petals", "Long-Lasting Quality", "Perfect for Weddings & Sympathy"]
     }
@@ -91,8 +91,8 @@ const seasonalDeals = [
         originalPrice: 234,
         code: 'WINTER15',
         validThrough: 'Jan 31',
-        image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&q=90&auto=format&fit=crop',
-        fallbackImage: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=900&q=80&auto=format&fit=crop',
+        image: 'assets/images/offers/winter.jpg',
+        fallbackImage: 'assets/images/offers/winter.jpg',
         includes: ['15-20 White & Blush Roses', 'Premium Eucalyptus Branches', 'Seasonal Winter Greenery', 'Elegant Gift Wrapping', 'Complimentary Care Instructions Card'],
         occasions: ['Winter Celebrations', 'Elegant Dinner Parties', 'Anniversary', 'Romantic Gestures']
     },
@@ -106,8 +106,8 @@ const seasonalDeals = [
         originalPrice: 268,
         code: 'LUNAR18',
         validThrough: 'Feb 15',
-        image: 'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=1200&q=90&auto=format&fit=crop',
-        fallbackImage: 'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=900&q=80&auto=format&fit=crop',
+        image: 'assets/images/offers/lunar.jpg',
+        fallbackImage: 'assets/images/offers/lunar.jpg',
         includes: ['Premium Red Roses & Carnations', 'Gold-Accented Decorations', 'Lucky Bamboo Elements', 'Traditional Red & Gold Wrapping', 'Prosperity Blessing Card'],
         occasions: ['Lunar New Year', 'Chinese New Year', 'Family Gatherings', 'Business Openings', 'Prosperity Wishes']
     },
@@ -121,8 +121,8 @@ const seasonalDeals = [
         originalPrice: 325,
         code: 'LOVE20',
         validThrough: 'Feb 14',
-        image: 'https://images.unsplash.com/photo-1515163992168-c0b13d3b0a6a?w=1200&q=90&auto=format&fit=crop',
-        fallbackImage: 'https://images.unsplash.com/photo-1515163992168-c0b13d3b0a6a?w=900&q=80&auto=format&fit=crop',
+        image: 'assets/images/offers/valentine.jpg',
+        fallbackImage: 'assets/images/offers/valentine.jpg',
         includes: ['24 Premium Long-Stemmed Red Roses', 'Artisan Belgian Chocolate Selection', 'Luxury Presentation Box', 'Personalized Love Note', 'Silk Ribbon & Gold Accents'],
         occasions: ['Valentine\'s Day', 'Marriage Proposals', 'Anniversaries', 'Ultimate Romantic Gestures']
     },
@@ -136,8 +136,8 @@ const seasonalDeals = [
         originalPrice: 210,
         code: 'SPRING12',
         validThrough: 'Mar 30',
-        image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200&q=90&auto=format&fit=crop',
-        fallbackImage: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=900&q=80&auto=format&fit=crop',
+        image: 'assets/images/offers/spring.jpg',
+        fallbackImage: 'assets/images/offers/spring.jpg',
         includes: ['Fresh Dutch Tulips', 'Seasonal Peonies', 'Fragrant Hyacinths', 'Spring Garden Fillers', 'Rustic Kraft Wrapping'],
         occasions: ['Spring Celebrations', 'Easter', 'Mother\'s Day', 'New Beginnings', 'Garden Parties']
     }
@@ -695,8 +695,8 @@ const recommendationData = {
     roses: {
         name: 'Red Roses Bouquet',
         price: 150,
-        image: 'https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=1200&q=90&auto=format&fit=crop',
-        fallbackImage: 'https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=900&q=80&auto=format&fit=crop',
+        image: 'assets/images/products/roses.jpg',
+        fallbackImage: 'assets/images/products/roses.jpg',
         description: 'Classic red roses arranged with care, symbolizing deep love and passion. Perfect for romantic occasions.',
         tags: ['Romantic', 'Classic', 'Popular in Sharjah'],
         match: 'Ideal for expressing love and romance',
@@ -705,8 +705,8 @@ const recommendationData = {
     sunflowers: {
         name: 'Sunflower Delight',
         price: 120,
-        image: 'https://images.unsplash.com/photo-1502309526941-4ffa1f976776?w=1200&q=90&auto=format&fit=crop',
-        fallbackImage: 'https://images.unsplash.com/photo-1502309526941-4ffa1f976776?w=900&q=80&auto=format&fit=crop',
+        image: 'assets/images/products/sunflower.jpg',
+        fallbackImage: 'assets/images/products/sunflower.jpg',
         description: 'Bright sunflowers that radiate joy and positivity. Perfect for celebrations and showing gratitude.',
         tags: ['Cheerful', 'Vibrant', 'Best for Same-Day'],
         match: 'Perfect for celebrations and gratitude',
@@ -715,8 +715,8 @@ const recommendationData = {
     lilies: {
         name: 'Lily Paradise',
         price: 145,
-        image: 'https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=1200&q=90&auto=format&fit=crop',
-        fallbackImage: 'https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=900&q=80&auto=format&fit=crop',
+        image: 'assets/images/products/lilies.jpg',
+        fallbackImage: 'assets/images/products/lilies.jpg',
         description: 'Fresh white lilies symbolizing purity, peace, and elegance. Ideal for sympathy and support.',
         tags: ['Elegant', 'Peaceful', 'Premium Quality'],
         match: 'Thoughtful choice for sympathy and support',
@@ -725,8 +725,8 @@ const recommendationData = {
     mixed: {
         name: 'Mixed Bouquet',
         price: 160,
-        image: 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=1200&q=90&auto=format&fit=crop',
-        fallbackImage: 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=900&q=80&auto=format&fit=crop',
+        image: 'assets/images/products/mixed.jpg',
+        fallbackImage: 'assets/images/products/mixed.jpg',
         description: 'Beautiful mix of seasonal flowers in harmonious colors. Versatile for any celebration or occasion.',
         tags: ['Versatile', 'Seasonal', 'Popular in Sharjah'],
         match: 'Versatile choice perfect for celebrations',
