@@ -19,6 +19,10 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="nav-actions">
+                <button class="translate-btn" onclick="toggleLanguage()" id="translate-btn">
+                    <span class="lang-icon">🌐</span>
+                    <span class="lang-text">العربية</span>
+                </button>
                 <a href="tel:+971507056500" class="phone-link">📞 050 705 6500</a>
                 <a href="javascript:void(0)" onclick="orderViaTalabat()" class="talabat-link">🛵 Order on Talabat</a>
                 <a href="login.html" class="login-link">Login</a>
@@ -123,6 +127,67 @@
                 <div class="feature-icon">💝</div>
                 <h3>Gift Packaging</h3>
                 <p>Luxury presentation with personalized cards and premium wrapping.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- HOW WE ARE DIFFERENT SECTION -->
+    <section id="different" class="different-section">
+        <div class="different-container">
+            <div class="different-header">
+                <h2 class="translatable" data-en="How We Are Different" data-ar="كيف نحن مختلفون">How We Are Different</h2>
+                <p class="translatable" data-en="What sets Camellia Flowers apart from other flower shops in UAE" data-ar="ما الذي يميز كاميليا فلاورز عن محلات الزهور الأخرى في الإمارات">What sets Camellia Flowers apart from other flower shops in UAE</p>
+            </div>
+            
+            <div class="different-grid">
+                <div class="different-card">
+                    <div class="different-icon">🏆</div>
+                    <h3 class="translatable" data-en="Award-Winning Florists" data-ar="خبراء الزهور الحائزون على جوائز">Award-Winning Florists</h3>
+                    <p class="translatable" data-en="Our master florists bring 30+ years of European-trained expertise, creating arrangements that are true works of art." data-ar="خبراؤنا في تنسيق الزهور يتمتعون بخبرة تزيد عن 30 عامًا، مع تدريب أوروبي متميز.">Our master florists bring 30+ years of European-trained expertise, creating arrangements that are true works of art.</p>
+                </div>
+                
+                <div class="different-card highlight">
+                    <div class="different-badge">Most Popular</div>
+                    <div class="different-icon">✨</div>
+                    <h3 class="translatable" data-en="Real-Time Order Tracking" data-ar="تتبع الطلب في الوقت الفعلي">Real-Time Order Tracking</h3>
+                    <p class="translatable" data-en="Track your delivery live on Talabat or get instant WhatsApp updates. Full transparency from order to doorstep." data-ar="تتبع توصيلك مباشرة على طلبات أو احصل على تحديثات فورية عبر واتساب. شفافية كاملة من الطلب إلى الباب.">Track your delivery live on Talabat or get instant WhatsApp updates. Full transparency from order to doorstep.</p>
+                </div>
+                
+                <div class="different-card">
+                    <div class="different-icon">🌍</div>
+                    <h3 class="translatable" data-en="Direct Farm Partnership" data-ar="شراكة مباشرة مع المزارع">Direct Farm Partnership</h3>
+                    <p class="translatable" data-en="We source directly from premium farms worldwide, bypassing middlemen to ensure fresher flowers at better prices." data-ar="نحصل على الزهور مباشرة من مزارع متميزة عالميًا، لضمان زهور أكثر نضارة بأسعار أفضل.">We source directly from premium farms worldwide, bypassing middlemen to ensure fresher flowers at better prices.</p>
+                </div>
+                
+                <div class="different-card">
+                    <div class="different-icon">📱</div>
+                    <h3 class="translatable" data-en="Smart Flower Quiz" data-ar="اختبار الزهور الذكي">Smart Flower Quiz</h3>
+                    <p class="translatable" data-en="Our AI-powered quiz recommends the perfect arrangement based on occasion, style, and delivery needs - unique to Camellia Flowers." data-ar="اختبارنا الذكي يوصي بالباقة المثالية بناءً على المناسبة والأسلوب واحتياجات التوصيل.">Our AI-powered quiz recommends the perfect arrangement based on occasion, style, and delivery needs - unique to Camellia Flowers.</p>
+                </div>
+                
+                <div class="different-card">
+                    <div class="different-icon">💰</div>
+                    <h3 class="translatable" data-en="Price Match Guarantee" data-ar="ضمان مطابقة السعر">Price Match Guarantee</h3>
+                    <p class="translatable" data-en="Find the same quality arrangement cheaper elsewhere in Sharjah? We'll match it and add 10% off your next order." data-ar="وجدت نفس الباقة بجودة مماثلة بسعر أرخص في الشارقة؟ سنطابق السعر ونضيف خصم 10% على طلبك القادم.">Find the same quality arrangement cheaper elsewhere in Sharjah? We'll match it and add 10% off your next order.</p>
+                </div>
+                
+                <div class="different-card">
+                    <div class="different-icon">⏰</div>
+                    <h3 class="translatable" data-en="24/7 WhatsApp Support" data-ar="دعم واتساب على مدار الساعة">24/7 WhatsApp Support</h3>
+                    <p class="translatable" data-en="Real humans, not bots. Get instant responses on WhatsApp anytime for urgent orders, customizations, or questions." data-ar="أشخاص حقيقيون، وليس روبوتات. احصل على ردود فورية عبر واتساب في أي وقت للطلبات العاجلة أو التخصيص.">Real humans, not bots. Get instant responses on WhatsApp anytime for urgent orders, customizations, or questions.</p>
+                </div>
+            </div>
+            
+            <div class="different-cta">
+                <h3 class="translatable" data-en="Experience the Camellia Difference Today" data-ar="جرب الفرق مع كاميليا اليوم">Experience the Camellia Difference Today</h3>
+                <div class="different-buttons">
+                    <button class="btn btn-primary" onclick="orderViaTalabat()">
+                        <span class="translatable" data-en="Order on Talabat" data-ar="اطلب على طلبات">Order on Talabat</span>
+                    </button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('quiz').scrollIntoView({behavior: 'smooth'})">
+                        <span class="translatable" data-en="Take Flower Quiz" data-ar="ابدأ اختبار الزهور">Take Flower Quiz</span>
+                    </button>
+                </div>
             </div>
         </div>
     </section>

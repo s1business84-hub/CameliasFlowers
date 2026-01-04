@@ -896,3 +896,150 @@ function restartQuiz() {
     currentQuestion = 0;
 }
 
+// ============================================
+// TRANSLATION SYSTEM
+// ============================================
+
+let currentLanguage = localStorage.getItem('language') || 'en';
+
+const translations = {
+    en: {
+        // Navbar
+        home: 'Home',
+        shop: 'Shop',
+        about: 'About',
+        contact: 'Contact',
+        quiz: 'Flower Quiz',
+        offers: 'Deals',
+        
+        // Hero
+        heroTitle: 'Camellia Flowers',
+        heroSubtitle: 'Premium Flowers Delivered Fresh to Your Doorstep in Sharjah',
+        shopNow: 'SHOP NOW',
+        orderTalabat: 'Order on Talabat',
+        customOrders: 'Custom Orders',
+        
+        // Different Section
+        differentTitle: 'How We Are Different',
+        differentSubtitle: 'What sets Camellia Flowers apart from other flower shops in UAE',
+        experienceDifference: 'Experience the Camellia Difference Today',
+        takeQuiz: 'Take Flower Quiz',
+        
+        // Features
+        sameDay: 'Same-Day Delivery',
+        freshGuarantee: 'Fresh Guarantee',
+        customDesigns: 'Custom Designs',
+        giftPackaging: 'Gift Packaging',
+        
+        // Common
+        orderWhatsApp: '💬 Order via WhatsApp',
+        orderOnTalabat: 'Order on Talabat',
+        learnMore: 'Learn More',
+    },
+    ar: {
+        // Navbar - Arabic
+        home: 'الرئيسية',
+        shop: 'المتجر',
+        about: 'من نحن',
+        contact: 'تواصل معنا',
+        quiz: 'اختبار الزهور',
+        offers: 'العروض',
+        
+        // Hero
+        heroTitle: 'كاميليا فلاورز',
+        heroSubtitle: 'زهور فاخرة يتم توصيلها طازجة إلى باب منزلك في الشارقة',
+        shopNow: 'تسوق الآن',
+        orderTalabat: 'اطلب على طلبات',
+        customOrders: 'طلبات مخصصة',
+        
+        // Different Section
+        differentTitle: 'كيف نحن مختلفون',
+        differentSubtitle: 'ما الذي يميز كاميليا فلاورز عن محلات الزهور الأخرى في الإمارات',
+        experienceDifference: 'جرب الفرق مع كاميليا اليوم',
+        takeQuiz: 'ابدأ اختبار الزهور',
+        
+        // Features
+        sameDay: 'توصيل في نفس اليوم',
+        freshGuarantee: 'ضمان النضارة',
+        customDesigns: 'تصاميم مخصصة',
+        giftPackaging: 'تغليف الهدايا',
+        
+        // Common
+        orderWhatsApp: '💬 اطلب عبر واتساب',
+        orderOnTalabat: 'اطلب على طلبات',
+        learnMore: 'اعرف المزيد',
+    }
+};
+
+function toggleLanguage() {
+    currentLanguage = currentLanguage === 'en' ? 'ar' : 'en';
+    localStorage.setItem('language', currentLanguage);
+    
+    // Update button text
+    const translateBtn = document.getElementById('translate-btn');
+    const langText = translateBtn.querySelector('.lang-text');
+    langText.textContent = currentLanguage === 'en' ? 'العربية' : 'English';
+    
+    // Apply RTL/LTR
+    document.documentElement.dir = currentLanguage === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = currentLanguage;
+    
+    // Update all translatable elements
+    document.querySelectorAll('.translatable').forEach(element => {
+        const key = element.getAttribute(`data-${currentLanguage}`);
+        if (key) {
+            element.textContent = key;
+        }
+    });
+    
+    // Update nav links
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const navTranslations = [
+        { en: 'Home', ar: 'الرئيسية' },
+        { en: 'Shop', ar: 'المتجر' },
+        { en: 'About', ar: 'من نحن' },
+        { en: 'Contact', ar: 'تواصل معنا' },
+        { en: 'Flower Quiz', ar: 'اختبار الزهور' },
+        { en: 'Deals', ar: 'العروض' }
+    ];
+    
+    navLinks.forEach((link, index) => {
+        if (navTranslations[index]) {
+            link.textContent = navTranslations[index][currentLanguage];
+        }
+    });
+    
+    // Show notification
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 100px;
+        right: 20px;
+        background: linear-gradient(135deg, #4a90e2, #5aa5f0);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(74, 144, 226, 0.3);
+        z-index: 10000;
+        animation: slideInRight 0.5s ease;
+        font-weight: 600;
+    `;
+    notification.textContent = currentLanguage === 'ar' 
+        ? 'تم التبديل إلى العربية ✓' 
+        : 'Switched to English ✓';
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+        notification.style.animation = 'fadeOut 0.5s ease';
+        setTimeout(() => notification.remove(), 500);
+    }, 2000);
+}
+
+// Initialize language on page load
+document.addEventListener('DOMContentLoaded', function() {
+    if (currentLanguage === 'ar') {
+        toggleLanguage();
+    }
+});
+
