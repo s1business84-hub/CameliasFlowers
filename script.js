@@ -64,7 +64,8 @@ const seasonalDeals = [
         discount: 15,
         price: 199,
         code: 'WINTER15',
-        validThrough: 'Jan 31'
+        validThrough: 'Jan 31',
+        image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=800&q=80'
     },
     {
         id: 'lunar-blooms',
@@ -73,7 +74,8 @@ const seasonalDeals = [
         discount: 18,
         price: 220,
         code: 'LUNAR18',
-        validThrough: 'Feb 15'
+        validThrough: 'Feb 15',
+        image: 'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?w=800&q=80'
     },
     {
         id: 'valentine-lux',
@@ -82,7 +84,8 @@ const seasonalDeals = [
         discount: 20,
         price: 260,
         code: 'LOVE20',
-        validThrough: 'Feb 14'
+        validThrough: 'Feb 14',
+        image: 'https://images.unsplash.com/photo-1515163992168-c0b13d3b0a6a?w=800&q=80'
     },
     {
         id: 'spring-awakening',
@@ -91,7 +94,8 @@ const seasonalDeals = [
         discount: 12,
         price: 185,
         code: 'SPRING12',
-        validThrough: 'Mar 30'
+        validThrough: 'Mar 30',
+        image: 'https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=80'
     }
 ];
 
@@ -125,8 +129,11 @@ function renderOffers() {
 
     container.innerHTML = seasonalDeals.map(deal => `
         <div class="offer-card animate-on-scroll">
+            <div class="offer-image">
+                <img src="${deal.image}" alt="${deal.title}">
+                <div class="offer-badge">${deal.discount}% OFF</div>
+            </div>
             <div class="offer-chip">Seasonal</div>
-            <div class="offer-badge">${deal.discount}% OFF</div>
             <div class="offer-body">
                 <h3>${deal.title}</h3>
                 <p>${deal.description}</p>
