@@ -7,7 +7,7 @@ const products = [
         price: 150,
         category: "Roses",
         tags: ["romantic", "anniversary"],
-        image: "https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=500"
+        image: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=800&q=80"
     },
     {
         id: 2,
@@ -16,7 +16,7 @@ const products = [
         price: 120,
         category: "Sunflowers",
         tags: ["cheerful", "birthday"],
-        image: "https://images.unsplash.com/photo-1597848212624-e530265c9a74?w=500"
+        image: "https://images.unsplash.com/photo-1597848212624-e530265c9a74?w=800&q=80"
     },
     {
         id: 3,
@@ -25,7 +25,7 @@ const products = [
         price: 135,
         category: "Tulips",
         tags: ["spring", "thank you"],
-        image: "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=500"
+        image: "https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?w=800&q=80"
     },
     {
         id: 4,
@@ -34,7 +34,7 @@ const products = [
         price: 200,
         category: "Orchids",
         tags: ["luxury", "gifting"],
-        image: "https://images.unsplash.com/photo-1558519225-f630c469be5c?w=500"
+        image: "https://images.unsplash.com/photo-1594878072478-d80089fcbea2?w=800&q=80"
     },
     {
         id: 5,
@@ -43,7 +43,7 @@ const products = [
         price: 160,
         category: "Mixed",
         tags: ["seasonal", "versatile"],
-        image: "https://images.unsplash.com/photo-1561181286-d3fee7d55364?w=500"
+        image: "https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=800&q=80"
     },
     {
         id: 6,
@@ -52,7 +52,7 @@ const products = [
         price: 145,
         category: "Lilies",
         tags: ["pure", "elegant"],
-        image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500"
+        image: "https://images.unsplash.com/photo-1569583191587-ae7a8cdad498?w=800&q=80"
     }
 ];
 
