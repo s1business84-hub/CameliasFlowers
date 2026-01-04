@@ -156,8 +156,8 @@ const specials = [
     },
     {
         id: 'special-yellow-white',
-        title: 'Yellow & White Bouquet',
-        description: 'White roses with sunny fillers in a soft aqua wrap. Includes ribbon, card, VAT, and Sharjah delivery.',
+        title: 'Sunshine Elegance Bouquet',
+        description: 'Elegant white roses with golden solidago accents in a soft aqua Korean wrap, tied with satin ribbon. Includes card, VAT, and Sharjah delivery.',
         price: 160,
         image: 'assets/images/specials/yellow-white-special.jpg',
         fallbackImage: 'assets/images/specials/yellow-white-special.jpg',
