@@ -8,7 +8,7 @@ const products = [
         price: 150,
         category: "Roses",
         tags: ["romantic", "anniversary"],
-        image: "https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=1200&q=80",
+        image: "https://images.unsplash.com/photo-1518709594023-6eab9bab7b23?w=1200&q=80",
         careInstructions: "Trim stems at 45° angle, change water daily, keep away from direct sunlight. Roses will last 5-7 days with proper care.",
         features: ["12-24 Premium Long-Stemmed Roses", "Hand-Tied by Expert Florists", "Includes Baby's Breath & Greenery", "Same-Day Delivery Available", "Perfect for Romance & Celebrations"]
     },
@@ -20,7 +20,7 @@ const products = [
         price: 120,
         category: "Sunflowers",
         tags: ["cheerful", "birthday"],
-        image: "https://images.unsplash.com/photo-1597848212624-e530265c9a74?w=1200&q=80",
+        image: "https://images.unsplash.com/photo-1502309526941-4ffa1f976776?w=1200&q=80",
         careInstructions: "Cut stems underwater, use flower food, change water every 2-3 days. Sunflowers last 7-10 days.",
         features: ["8-12 Premium Sunflowers", "Mixed with Complementary Fillers", "Bright & Cheerful Design", "Delivered Fresh Daily", "Ideal for Birthdays & Get Well Soon"]
     },
@@ -32,7 +32,7 @@ const products = [
         price: 135,
         category: "Tulips",
         tags: ["spring", "thank you"],
-        image: "https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?w=1200&q=80",
+        image: "https://images.unsplash.com/photo-1520763185298-1b434c919102?w=1200&q=80",
         careInstructions: "Keep water level low (2-3 inches), re-cut stems every few days, tulips continue to grow in vase.",
         features: ["15-20 Premium Dutch Tulips", "Choice of Color Combinations", "Elegant Hand-Wrapped Presentation", "Fresh Import Guarantee", "Perfect for Thank You & Appreciation"]
     },
@@ -44,7 +44,7 @@ const products = [
         price: 200,
         category: "Orchids",
         tags: ["luxury", "gifting"],
-        image: "https://images.unsplash.com/photo-1594878072478-d80089fcbea2?w=1200&q=80",
+        image: "https://images.unsplash.com/photo-1551131618-3f0a4752c0bc?w=1200&q=80",
         careInstructions: "Water once weekly, provide indirect sunlight, mist occasionally. Orchids can bloom for 2-3 months.",
         features: ["Premium Phalaenopsis Orchids", "Long-Lasting Blooms (2-3 Months)", "Elegant Ceramic Pot Included", "Multiple Color Options", "Ideal for Luxury Gifts & Corporate Events"]
     },
@@ -68,7 +68,7 @@ const products = [
         price: 145,
         category: "Lilies",
         tags: ["pure", "elegant"],
-        image: "https://images.unsplash.com/photo-1569583191587-ae7a8cdad498?w=1200&q=80",
+        image: "https://images.unsplash.com/photo-1496062031456-07b8f162a322?w=1200&q=80",
         careInstructions: "Remove pollen stamens to prevent staining, change water frequently, lilies last 7-14 days.",
         features: ["6-10 Oriental Lily Stems", "Large Fragrant Blooms", "Pristine White Petals", "Long-Lasting Quality", "Perfect for Weddings & Sympathy"]
     }
@@ -1254,6 +1254,48 @@ function closeDetailModal() {
 document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') {
         closeDetailModal();
+    }
+});
+
+// ============================================
+// MOBILE MENU FUNCTIONS
+// ============================================
+
+function toggleMobileMenu() {
+    const navLinks = document.getElementById('nav-links');
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    
+    navLinks.classList.toggle('mobile-active');
+    
+    // Update icon
+    const menuIcon = menuToggle.querySelector('.menu-icon');
+    if (navLinks.classList.contains('mobile-active')) {
+        menuIcon.textContent = '✕';
+    } else {
+        menuIcon.textContent = '☰';
+    }
+}
+
+function closeMobileMenu() {
+    const navLinks = document.getElementById('nav-links');
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    
+    navLinks.classList.remove('mobile-active');
+    
+    // Reset icon
+    const menuIcon = menuToggle.querySelector('.menu-icon');
+    menuIcon.textContent = '☰';
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(e) {
+    const navLinks = document.getElementById('nav-links');
+    const menuToggle = document.getElementById('mobile-menu-toggle');
+    
+    if (navLinks && menuToggle && navLinks.classList.contains('mobile-active')) {
+        if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+            closeMobileMenu();
+        }
     }
 });
 

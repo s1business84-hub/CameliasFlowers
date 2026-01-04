@@ -12,21 +12,24 @@
             <div class="logo">
                 <img src="assets/logo.svg" alt="Camellia Flowers Logo" class="logo-image">
             </div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#quiz">Find Your Flowers</a></li>
-                <li><a href="#products">Flowers</a></li>
-                <li><a href="#offers">Seasonal</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" id="mobile-menu-toggle">
+                <span class="menu-icon">☰</span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
+                <li><a href="#quiz" onclick="closeMobileMenu()">Find Your Flowers</a></li>
+                <li><a href="#products" onclick="closeMobileMenu()">Flowers</a></li>
+                <li><a href="#offers" onclick="closeMobileMenu()">Seasonal</a></li>
+                <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
+                <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
             </ul>
             <div class="nav-actions">
                 <button class="translate-btn" onclick="toggleLanguage()" id="translate-btn">
                     <span class="lang-icon">🌐</span>
                     <span class="lang-text">العربية</span>
                 </button>
-                <a href="tel:+971507056500" class="phone-link">📞 050 705 6500</a>
-                <a href="javascript:void(0)" onclick="orderViaTalabat()" class="talabat-link">🛵 Order on Talabat</a>
+                <a href="tel:+971507056500" class="phone-link"><span>📞 050 705 6500</span></a>
+                <a href="javascript:void(0)" onclick="orderViaTalabat()" class="talabat-link"><span>🛵 Order on Talabat</span></a>
                 <a href="login.html" class="login-link">Login</a>
                 <div class="cart-icon" onclick="toggleCart()">🛒 <span id="cart-count">0</span></div>
             </div>
