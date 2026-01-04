@@ -2603,34 +2603,65 @@ body {
     /* Offers/Specials cards mobile */
     .offers {
         padding: 2rem 0;
+        background: linear-gradient(180deg, #fdf2f0 0%, #fae8e5 100%);
+    }
+    
+    .offers h2 {
+        font-size: 1.75rem;
+        margin-bottom: 0.5rem;
     }
     
     .offers-subtitle {
         font-size: 0.9rem;
         padding: 0 1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
     }
     
     .offers-grid {
-        padding: 0.5rem 2%;
-        gap: 0.75rem;
-        scroll-padding: 0 2%;
+        padding: 1rem 4%;
+        gap: 1rem;
+        scroll-padding: 0 4%;
+        display: flex;
+        flex-direction: column;
+        overflow-x: visible;
+        overflow-y: visible;
     }
     
     .offer-card {
-        min-width: 88vw;
-        max-width: 88vw;
+        min-width: 90vw;
+        max-width: 90vw;
         height: auto;
-        min-height: 420px;
+        min-height: auto;
         padding: 0;
         border-radius: 20px;
         margin: 0 0.5rem;
+        background: linear-gradient(145deg, #fff5f3 0%, #fdf0ee 50%, #fae8e5 100%);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: 0 4px 20px rgba(183, 110, 121, 0.15);
+        border: 1px solid rgba(183, 110, 121, 0.2);
+    }
+    
+    .offer-card::before,
+    .offer-card::after {
+        display: none;
     }
     
     .offer-image {
         position: relative;
-        height: 200px;
+        height: 220px;
         border-radius: 20px 20px 0 0;
+        overflow: hidden;
+    }
+    
+    .offer-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .offer-image::after {
+        display: none;
     }
     
     .offer-chip {
@@ -2648,9 +2679,8 @@ body {
     }
     
     .offer-body {
-        padding: 1rem;
-        padding-top: 0.75rem;
-        margin-top: 0;
+        padding: 1.25rem;
+        gap: 0.5rem;
     }
     
     .offer-body h3 {
@@ -2689,13 +2719,27 @@ body {
     
     .offer-actions {
         gap: 0.5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
     
     .offer-cta,
     .copy-code {
-        padding: 0.75rem 0.75rem;
+        padding: 0.75rem 1rem;
         font-size: 0.85rem;
         border-radius: 10px;
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .offer-whatsapp {
+        padding: 0.65rem 0.85rem;
+        font-size: 0.8rem;
+        flex: 1;
+        min-width: 100px;
+        text-align: center;
+        justify-content: center;
     }
     
     /* Products section mobile */
@@ -2711,6 +2755,16 @@ body {
     
     .product-card {
         border-radius: 16px;
+        min-width: 100%;
+        background: linear-gradient(145deg, #fff5f3 0%, #fdf0ee 50%, #fae8e5 100%);
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        box-shadow: 0 4px 20px rgba(183, 110, 121, 0.15);
+    }
+    
+    .product-card::before,
+    .product-card::after {
+        display: none;
     }
     
     .product-image {
