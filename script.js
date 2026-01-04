@@ -176,7 +176,7 @@ function renderProducts(list) {
                 <h3 class="product-name">${product.name}</h3>
                 <p class="product-description">${product.description}</p>
                 <p class="product-price">AED ${product.price}</p>
-                <button class="add-to-cart" onclick="addToCart(${product.id})">Add to Cart</button>
+                <button class="add-to-cart" onclick="orderViaWhatsApp('${product.name}', ${product.price})">💬 Order via WhatsApp</button>
             </div>
         `;
         grid.appendChild(card);
@@ -198,12 +198,23 @@ function addToCart(productId) {
     // Trigger cart bounce animation
     const cartIcon = document.querySelector('.cart-icon');
     cartIcon.style.animation = 'none';
-    setTimeout(() => {
-        cartIcon.style.animation = 'cartBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
-    }, 10);
+    setTimeout(() => { cartIcon.style.animation = 'cartBounce 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)'; }, 10);
     
     // Show notification
     showNotification('Added to cart!');
+}
+
+// Order via WhatsApp
+function orderViaWhatsApp(productName, price) {
+    const whatsappNumber = '971507056500';
+    const message = encodeURIComponent(
+        `Hi! I would like to order:\n\n` +
+        `🌸 ${productName}\n` +
+        `💰 AED ${price}\n\n` +
+        `📍 Delivery Location: Muwaileh, Sharjah\n\n` +
+        `Please confirm availability and delivery time. Thank you!`
+    );
+    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
 }
 
 // Update cart count
@@ -501,3 +512,294 @@ function initScrollAnimations() {
 document.addEventListener('DOMContentLoaded', () => {
     initScrollAnimations();
 });
+
+// ==============================================
+// QUIZ FUNCTIONALITY
+// ==============================================
+
+const quizQuestions = [
+    {
+        id: 1,
+        question: "What's the occasion?",
+        questionAr: "ما هي المناسبة؟",
+        options: [
+            { id: 'romantic', icon: '💖', title: 'Romance & Love', description: 'Express your heartfelt emotions', value: 'roses' },
+            { id: 'celebration', icon: '🎉', title: 'Celebration', description: 'Birthdays, achievements, milestones', value: 'mixed' },
+            { id: 'sympathy', icon: '🤍', title: 'Sympathy & Support', description: 'Show care during difficult times', value: 'lilies' },
+            { id: 'gratitude', icon: '🌻', title: 'Thank You', description: 'Show appreciation and gratitude', value: 'sunflowers' }
+        ]
+    },
+    {
+        id: 2,
+        question: "When do you need it delivered?",
+        questionAr: "متى تحتاج التوصيل؟",
+        options: [
+            { id: 'today', icon: '⚡', title: 'Today (Same-Day)', description: 'Available for Sharjah orders before 2 PM', value: 'express' },
+            { id: 'tomorrow', icon: '📅', title: 'Tomorrow', description: 'Next-day delivery across UAE', value: 'standard' },
+            { id: 'scheduled', icon: '🗓️', title: 'Specific Date', description: 'Plan ahead for special occasions', value: 'scheduled' },
+            { id: 'flexible', icon: '🌸', title: 'Flexible', description: 'No rush, anytime this week', value: 'flexible' }
+        ]
+    },
+    {
+        id: 3,
+        question: "What's your style preference?",
+        questionAr: "ما هو تفضيلك للأسلوب؟",
+        options: [
+            { id: 'classic', icon: '🌹', title: 'Classic & Elegant', description: 'Timeless arrangements with traditional flowers', value: 'classic' },
+            { id: 'modern', icon: '✨', title: 'Modern & Chic', description: 'Contemporary designs with unique textures', value: 'modern' },
+            { id: 'vibrant', icon: '🌈', title: 'Bright & Colorful', description: 'Bold colors that make a statement', value: 'vibrant' },
+            { id: 'soft', icon: '🌸', title: 'Soft & Delicate', description: 'Gentle pastels and romantic whites', value: 'soft' }
+        ]
+    }
+];
+
+const recommendationData = {
+    roses: {
+        name: 'Red Roses Bouquet',
+        price: 150,
+        image: 'https://images.unsplash.com/photo-1455659817273-f96807779a8a?w=800&q=80',
+        description: 'Classic red roses arranged with care, symbolizing deep love and passion. Perfect for romantic occasions.',
+        tags: ['Romantic', 'Classic', 'Popular in Sharjah'],
+        match: 'Ideal for expressing love and romance',
+        badge: 'Most Romantic'
+    },
+    sunflowers: {
+        name: 'Sunflower Delight',
+        price: 120,
+        image: 'https://images.unsplash.com/photo-1597848212624-e530265c9a74?w=800&q=80',
+        description: 'Bright sunflowers that radiate joy and positivity. Perfect for celebrations and showing gratitude.',
+        tags: ['Cheerful', 'Vibrant', 'Best for Same-Day'],
+        match: 'Perfect for celebrations and gratitude',
+        badge: 'Most Cheerful'
+    },
+    lilies: {
+        name: 'Lily Paradise',
+        price: 145,
+        image: 'https://images.unsplash.com/photo-1569583191587-ae7a8cdad498?w=800&q=80',
+        description: 'Fresh white lilies symbolizing purity, peace, and elegance. Ideal for sympathy and support.',
+        tags: ['Elegant', 'Peaceful', 'Premium Quality'],
+        match: 'Thoughtful choice for sympathy and support',
+        badge: 'Most Elegant'
+    },
+    mixed: {
+        name: 'Mixed Bouquet',
+        price: 160,
+        image: 'https://images.unsplash.com/photo-1563241527-3004b7be0ffd?w=800&q=80',
+        description: 'Beautiful mix of seasonal flowers in harmonious colors. Versatile for any celebration or occasion.',
+        tags: ['Versatile', 'Seasonal', 'Popular in Sharjah'],
+        match: 'Versatile choice perfect for celebrations',
+        badge: 'Most Popular'
+    },
+    orchids: {
+        name: 'Orchid Elegance',
+        price: 200,
+        image: 'https://images.unsplash.com/photo-1594878072478-d80089fcbea2?w=800&q=80',
+        description: 'Exotic orchids for those who appreciate luxury and sophistication. A stunning statement piece.',
+        tags: ['Luxury', 'Modern', 'Premium Quality'],
+        match: 'Sophisticated choice for modern aesthetics',
+        badge: 'Most Luxurious'
+    },
+    tulips: {
+        name: 'Tulip Collection',
+        price: 135,
+        image: 'https://images.unsplash.com/photo-1524386416438-98b9b2d4b433?w=800&q=80',
+        description: 'Elegant tulips in vibrant spring colors. Perfect for expressing cheerfulness and renewal.',
+        tags: ['Spring', 'Colorful', 'Best for Same-Day'],
+        match: 'Fresh and vibrant for bright occasions',
+        badge: 'Spring Favorite'
+    }
+};
+
+let quizAnswers = {};
+let currentQuestion = 0;
+
+function startQuiz() {
+    quizAnswers = {};
+    currentQuestion = 0;
+    document.getElementById('quiz-start').classList.remove('active');
+    document.getElementById('quiz-questions').classList.add('active');
+    loadQuestion();
+}
+
+function loadQuestion() {
+    const question = quizQuestions[currentQuestion];
+    const container = document.getElementById('question-container');
+    
+    container.innerHTML = `
+        <div class="quiz-question active">
+            <h3>${question.question}</h3>
+            <p class="quiz-subtitle-ar" style="font-size: 1.2rem; margin-bottom: 2rem;">${question.questionAr}</p>
+            <div class="quiz-options">
+                ${question.options.map(option => `
+                    <div class="quiz-option" onclick="selectOption(${question.id}, '${option.id}', '${option.value}')">
+                        <div class="quiz-option-icon">${option.icon}</div>
+                        <div class="quiz-option-text">
+                            <h4>${option.title}</h4>
+                            <p>${option.description}</p>
+                        </div>
+                    </div>
+                `).join('')}
+            </div>
+        </div>
+    `;
+    
+    updateProgress();
+    updateNavigationButtons();
+}
+
+function selectOption(questionId, optionId, value) {
+    quizAnswers[questionId] = { optionId, value };
+    
+    // Visual feedback
+    document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+    event.currentTarget.classList.add('selected');
+    
+    // Enable next button
+    document.getElementById('btn-next').disabled = false;
+}
+
+function nextQuestion() {
+    if (!quizAnswers[quizQuestions[currentQuestion].id]) {
+        showNotification('Please select an option');
+        return;
+    }
+    
+    if (currentQuestion < quizQuestions.length - 1) {
+        currentQuestion++;
+        loadQuestion();
+    } else {
+        showResults();
+    }
+}
+
+function previousQuestion() {
+    if (currentQuestion > 0) {
+        currentQuestion--;
+        loadQuestion();
+    }
+}
+
+function updateProgress() {
+    const progress = ((currentQuestion + 1) / quizQuestions.length) * 100;
+    document.getElementById('progress-fill').style.width = `${progress}%`;
+    document.getElementById('current-step').textContent = currentQuestion + 1;
+}
+
+function updateNavigationButtons() {
+    const backBtn = document.getElementById('btn-back');
+    const nextBtn = document.getElementById('btn-next');
+    
+    if (currentQuestion === 0) {
+        backBtn.style.display = 'none';
+    } else {
+        backBtn.style.display = 'inline-block';
+    }
+    
+    if (currentQuestion === quizQuestions.length - 1) {
+        nextBtn.textContent = 'Show My Picks';
+    } else {
+        nextBtn.textContent = 'Next';
+    }
+    
+    nextBtn.disabled = !quizAnswers[quizQuestions[currentQuestion].id];
+}
+
+function showResults() {
+    document.getElementById('quiz-questions').classList.remove('active');
+    document.getElementById('quiz-results').classList.add('active');
+    
+    // Determine recommendations based on answers
+    const recommendations = getRecommendations();
+    displayRecommendations(recommendations);
+}
+
+function getRecommendations() {
+    const occasionAnswer = quizAnswers[1]?.value || 'mixed';
+    const deliveryAnswer = quizAnswers[2]?.value || 'standard';
+    const styleAnswer = quizAnswers[3]?.value || 'classic';
+    
+    // Primary recommendation based on occasion
+    let primary = occasionAnswer;
+    
+    // Secondary recommendations
+    let secondary = [];
+    if (styleAnswer === 'vibrant') {
+        secondary.push('sunflowers');
+    }
+    if (styleAnswer === 'modern') {
+        secondary.push('orchids');
+    }
+    if (styleAnswer === 'classic') {
+        secondary.push('roses');
+    }
+    if (deliveryAnswer === 'express') {
+        secondary.push('tulips');
+    }
+    
+    // Remove duplicates and primary from secondary
+    secondary = [...new Set(secondary)].filter(item => item !== primary).slice(0, 2);
+    
+    return [primary, ...secondary];
+}
+
+function displayRecommendations(recommendations) {
+    const container = document.getElementById('recommendations-container');
+    const whatsappNumber = '971507056500';
+    
+    container.innerHTML = recommendations.map((rec, index) => {
+        const product = recommendationData[rec];
+        if (!product) return '';
+        
+        const whatsappMessage = encodeURIComponent(
+            `Hi! I'm interested in the ${product.name} (AED ${product.price}). I found it through your flower quiz. Can you help me place an order?`
+        );
+        
+        return `
+            <div class="recommendation-card">
+                <div class="recommendation-image">
+                    <img src="${product.image}" alt="${product.name}">
+                    <div class="recommendation-badge">${product.badge}</div>
+                </div>
+                <div class="recommendation-content">
+                    <h4>${product.name}</h4>
+                    <div class="recommendation-price">AED ${product.price}</div>
+                    <p class="recommendation-description">${product.description}</p>
+                    
+                    ${index === 0 ? `
+                        <div class="recommendation-match">
+                            <h5>Why This Matches You</h5>
+                            <p>${product.match}</p>
+                        </div>
+                    ` : ''}
+                    
+                    <div class="recommendation-tags">
+                        ${product.tags.map(tag => `<span class="recommendation-tag">${tag}</span>`).join('')}
+                    </div>
+                    
+                    <div class="recommendation-actions">
+                        <a href="#products" class="btn-customize">Customize</a>
+                        <a href="https://wa.me/${whatsappNumber}?text=${whatsappMessage}" 
+                           target="_blank" 
+                           class="btn-whatsapp">
+                            <span>💬</span> WhatsApp Order
+                        </a>
+                    </div>
+                    
+                    ${product.name.includes('Fish') ? `
+                        <div class="care-disclaimer">
+                            <p><strong>Care Note:</strong> Fresh flowers stay beautiful for 5-7 days with proper care. Change water daily and keep away from direct sunlight.</p>
+                        </div>
+                    ` : ''}
+                </div>
+            </div>
+        `;
+    }).join('');
+}
+
+function restartQuiz() {
+    document.getElementById('quiz-results').classList.remove('active');
+    document.getElementById('quiz-start').classList.add('active');
+    quizAnswers = {};
+    currentQuestion = 0;
+}
+

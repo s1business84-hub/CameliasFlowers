@@ -12,6 +12,7 @@
             <div class="logo">🌸 Camellias Flowers</div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#quiz">Find Your Flowers</a></li>
                 <li><a href="#products">Flowers</a></li>
                 <li><a href="#offers">Seasonal</a></li>
                 <li><a href="#about">About</a></li>
@@ -41,6 +42,62 @@
             </div>
         </div>
         <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- QUIZ SECTION -->
+    <section id="quiz" class="quiz-section">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <h2>Find Your Perfect Flowers</h2>
+                <p class="quiz-subtitle-ar">اكتشف الزهور المثالية لك</p>
+                <p class="quiz-subtitle">Answer a few questions and we'll recommend the ideal arrangement for your occasion</p>
+            </div>
+
+            <!-- Quiz Start Screen -->
+            <div class="quiz-screen active" id="quiz-start">
+                <div class="quiz-start-content">
+                    <div class="quiz-icon">🌸</div>
+                    <h3>Discover Your Ideal Bouquet</h3>
+                    <p>Let us help you choose the perfect flowers in just 3 simple questions</p>
+                    <button class="btn-quiz-primary" onclick="startQuiz()">Start Quiz</button>
+                </div>
+            </div>
+
+            <!-- Quiz Questions -->
+            <div class="quiz-screen" id="quiz-questions">
+                <div class="quiz-progress">
+                    <div class="quiz-progress-bar">
+                        <div class="quiz-progress-fill" id="progress-fill"></div>
+                    </div>
+                    <p class="quiz-step-text">Question <span id="current-step">1</span> of 3</p>
+                </div>
+
+                <div class="quiz-question-container" id="question-container">
+                    <!-- Questions will be loaded here -->
+                </div>
+
+                <div class="quiz-navigation">
+                    <button class="btn-quiz-secondary" onclick="previousQuestion()" id="btn-back" style="display: none;">Back</button>
+                    <button class="btn-quiz-primary" onclick="nextQuestion()" id="btn-next">Next</button>
+                </div>
+            </div>
+
+            <!-- Quiz Results -->
+            <div class="quiz-screen" id="quiz-results">
+                <div class="quiz-results-header">
+                    <h3>Your Perfect Match</h3>
+                    <p class="quiz-subtitle-ar">اختيارك المثالي</p>
+                    <p>Based on your preferences, we recommend:</p>
+                </div>
+                <div class="quiz-recommendations" id="recommendations-container">
+                    <!-- Recommendations will be loaded here -->
+                </div>
+                <div class="quiz-results-actions">
+                    <button class="btn-quiz-secondary" onclick="restartQuiz()">Take Quiz Again</button>
+                    <a href="#products" class="btn-quiz-primary">Browse All Flowers</a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="features" class="features">
