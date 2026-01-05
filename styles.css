@@ -685,9 +685,11 @@ header {
 }
 
 .offer-price {
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     font-weight: 800;
-    color: #b76e79;
+    color: #8b4557;
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .offer-code {
@@ -2354,6 +2356,8 @@ header {
     
     .offer-price {
         font-size: 1.5rem;
+        color: #8b4557;
+        display: block;
     }
     
     .offer-footer {
@@ -2752,7 +2756,10 @@ header {
     }
     
     .offer-price {
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        color: #8b4557;
+        display: block;
+        margin-bottom: 0.5rem;
     }
     
     .offer-code {
