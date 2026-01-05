@@ -3121,10 +3121,6 @@ header {
         font-size: 1.2rem;
     }
     
-    .nav-links {
-        gap: 1rem;
-    }
-    
     .product-card {
         min-width: 280px;
     }
