@@ -1316,6 +1316,7 @@ function showOfferDetail(offerId) {
     `;
     
     const modal = document.getElementById('detail-modal');
+    modal.style.display = '';
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
@@ -1323,6 +1324,7 @@ function showOfferDetail(offerId) {
 function closeDetailModal() {
     const modal = document.getElementById('detail-modal');
     modal.classList.remove('active');
+    modal.style.display = 'none';
     document.body.style.overflow = '';
 }
 
