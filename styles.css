@@ -4,13 +4,22 @@
     box-sizing: border-box;
 }
 
+html {
+    overscroll-behavior-y: none;
+    height: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: #333;
     overflow-x: hidden;
     background: linear-gradient(135deg, #fdf2f0 0%, #fae8e5 100%);
-    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    min-height: 100dvh;
+    min-height: 100vh; /* fallback */
 }
 
 :root {
