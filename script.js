@@ -165,12 +165,12 @@ const specials = [
     },
     {
         id: 'special-orchid-elegance',
-        title: 'Orchid Elegance',
-        description: 'Stunning cream white roses with delicate golden solidago fillers, wrapped in elegant mint Korean paper with satin ribbon. Perfect for any occasion.',
+        title: 'White Rose Delight',
+        description: 'Beautiful cream white roses with golden solidago fillers in elegant mint Korean wrap with satin ribbon. Includes card, VAT, and Sharjah delivery.',
         price: 150,
-        image: 'assets/images/specials/orchid-elegance.jpg',
-        fallbackImage: 'assets/images/specials/orchid-elegance.jpg',
-        badge: 'New Arrival'
+        image: 'assets/images/specials/white-rose-delight.jpg',
+        fallbackImage: 'assets/images/specials/yellow-white-special.jpg',
+        badge: 'Best Value'
     }
 ];
 
