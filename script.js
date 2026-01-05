@@ -426,8 +426,12 @@ function updateCartCount() {
 // Toggle cart modal
 function toggleCart() {
     const modal = document.getElementById('cart-modal');
-    modal.classList.toggle('active');
     if (modal.classList.contains('active')) {
+        modal.classList.remove('active');
+        modal.style.display = 'none';
+    } else {
+        modal.style.display = '';
+        modal.classList.add('active');
         updateCartModal();
     }
 }
