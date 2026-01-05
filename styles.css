@@ -3169,7 +3169,7 @@ header {
 
 .features {
     padding: 5rem 5%;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.98) 100%);
+    background: linear-gradient(135deg, #fdf2f0 0%, #fae8e5 100%);
     position: relative;
 }
 
@@ -3182,7 +3182,7 @@ header {
 }
 
 .feature-card {
-    background: rgba(255, 255, 255, 0.6);
+    background: linear-gradient(145deg, #fff5f3 0%, #fdf0ee 50%, #fae8e5 100%);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border: 2px solid rgba(183, 110, 121, 0.2);
