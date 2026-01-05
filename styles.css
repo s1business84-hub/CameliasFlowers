@@ -23,19 +23,6 @@ body {
     min-height: 100vh; /* fallback */
 }
 
-/* iOS safe area background color */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: env(safe-area-inset-top);
-    background: #fdf2f0;
-    z-index: -1;
-    pointer-events: none;
-}
-
 header {
     background: #fdf2f0;
     padding-top: env(safe-area-inset-top);
