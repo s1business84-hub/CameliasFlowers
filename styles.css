@@ -32,7 +32,8 @@ body::before {
     right: 0;
     height: env(safe-area-inset-top);
     background: #fdf2f0;
-    z-index: 9999;
+    z-index: -1;
+    pointer-events: none;
 }
 
 header {
