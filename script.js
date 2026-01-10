@@ -539,6 +539,47 @@ function renderProducts(list) {
         card.onclick = () => showProductDetail(product.id);
         grid.appendChild(card);
     });
+    
+    // Add View More button for mobile
+    addViewMoreButton();
+}
+
+// Add View More button functionality
+function addViewMoreButton() {
+    const productsSection = document.querySelector('.products');
+    const grid = document.getElementById('product-grid');
+    
+    if (!productsSection || !grid) return;
+    
+    // Remove existing button if any
+    const existingBtn = document.getElementById('view-more-products');
+    if (existingBtn) existingBtn.remove();
+    
+    // Create View More button
+    const viewMoreBtn = document.createElement('button');
+    viewMoreBtn.id = 'view-more-products';
+    viewMoreBtn.className = 'view-more-btn';
+    viewMoreBtn.innerHTML = '<span>View More Products</span> <span class="arrow">▼</span>';
+    
+    // Initially collapse grid on mobile
+    if (window.innerWidth <= 768) {
+        grid.classList.add('collapsed');
+    }
+    
+    viewMoreBtn.onclick = function() {
+        grid.classList.toggle('collapsed');
+        const isCollapsed = grid.classList.contains('collapsed');
+        viewMoreBtn.innerHTML = isCollapsed 
+            ? '<span>View More Products</span> <span class="arrow">▼</span>'
+            : '<span>Show Less</span> <span class="arrow">▼</span>';
+        viewMoreBtn.classList.toggle('expanded', !isCollapsed);
+    };
+    
+    // Insert button after products header
+    const productsHeader = productsSection.querySelector('.products-header');
+    if (productsHeader) {
+        productsHeader.insertAdjacentElement('afterend', viewMoreBtn);
+    }
 }
 
 // Add to cart with animation
@@ -612,13 +653,8 @@ function orderViaTalabat(productName = null) {
         setTimeout(() => notifyWindow.close(), 2000);
     }
     
-    // Show user notification
-    showNotification('Redirecting to Talabat... Order will be tracked!');
-    
-    // Redirect to Talabat after short delay
-    setTimeout(() => {
-        window.open(talabatUrl, '_blank');
-    }, 1000);
+    // Redirect directly to Talabat
+    window.open(talabatUrl, '_blank');
 }
 
 // Track returning customers from Talabat
