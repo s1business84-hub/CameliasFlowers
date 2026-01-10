@@ -174,91 +174,133 @@ const specials = [
     }
 ];
 
-// Premium Bouquets - Ready-to-Order Collection
+// Premium Bouquets - Ready-to-Order Collection (9 Bouquets)
 const bouquets = [
     {
-        id: 'bouquet-classic-elegance',
+        id: 'bouquet-1',
         title: 'Classic Elegance',
         description: 'Timeless white and red roses beautifully arranged in our signature quilted white gift bag with elegant handles.',
         longDescription: 'A sophisticated blend of pristine white roses and passionate red roses, expertly hand-arranged by our master florists. This classic combination is presented in our premium quilted white leather-effect gift bag, complete with sturdy handles for easy transport. Perfect for anniversaries, romantic occasions, or expressing timeless love.',
         price: 185,
         originalPrice: 210,
-        image: 'assets/images/bouquet-classic-elegance.jpg',
-        fallbackImage: 'assets/images/products/roses.jpg',
+        image: 'assets/images/bo1.jpeg',
+        fallbackImage: 'assets/images/bo1.jpeg',
         badge: 'Premium',
         occasions: ['Anniversary', 'Romance', 'Apology', 'Date Night'],
         features: ['15-18 Mixed Premium Roses', 'Quilted Signature Gift Bag', 'Professional Hand-Arrangement', 'Same-Day Delivery', 'Complimentary Greeting Card'],
         careInstructions: 'Remove from bag carefully, trim stems at angle, place in clean vase with flower food. Roses will bloom beautifully for 7-10 days.'
     },
     {
-        id: 'bouquet-rose-garden',
+        id: 'bouquet-2',
         title: 'Rose Garden Bliss',
-        description: 'Romantic pink roses and cheerful gerberas wrapped in luxurious mauve Korean paper with golden accents.',
-        longDescription: 'A dreamy combination of soft pink roses and vibrant gerbera daisies, creating the perfect balance of romance and joy. Our florists carefully select each bloom for optimal freshness and arrange them with delicate filler flowers. The bouquet is wrapped in our signature mauve Korean paper and finished with coordinating ribbons.',
+        description: 'Romantic pink roses and cheerful gerberas wrapped in luxurious mauve Korean paper with baby\'s breath accents.',
+        longDescription: 'A dreamy combination of soft pink roses and vibrant gerbera daisies, creating the perfect balance of romance and joy. Our florists carefully select each bloom for optimal freshness and arrange them with delicate baby\'s breath. The bouquet is wrapped in our signature mauve Korean paper and finished with coordinating ribbons.',
         price: 165,
         originalPrice: 185,
-        image: 'assets/images/bouquet-rose-garden.jpg',
-        fallbackImage: 'assets/images/products/roses.jpg',
+        image: 'assets/images/bo2.jpeg',
+        fallbackImage: 'assets/images/bo2.jpeg',
         badge: 'Popular',
         occasions: ['Birthday', 'Thank You', 'Congratulations', 'Just Because'],
         features: ['12-15 Pink Roses & Gerberas', 'Korean Premium Wrapping', 'Baby\'s Breath Accents', 'Satin Ribbon Finish', 'Fresh Guarantee'],
         careInstructions: 'Unwrap gently, cut stems underwater at 45° angle, use flower food for extended freshness. Expected lifespan 6-8 days.'
     },
     {
-        id: 'bouquet-azure-dreams',
+        id: 'bouquet-3',
         title: 'Azure Dreams',
         description: 'Stunning blue roses surrounded by delicate baby\'s breath in sophisticated grey wrapping with silver ribbon.',
         longDescription: 'Experience the magic of rare blue roses in this extraordinary bouquet. Each blue rose is carefully preserved to maintain its unique color while ensuring maximum freshness. Surrounded by clouds of baby\'s breath and wrapped in elegant grey paper with silver accents, this bouquet makes a truly memorable statement for special occasions.',
         price: 195,
         originalPrice: 220,
-        image: 'assets/images/bouquet-azure-dreams.jpg',
-        fallbackImage: 'assets/images/products/roses.jpg',
+        image: 'assets/images/bo3.jpeg',
+        fallbackImage: 'assets/images/bo3.jpeg',
         badge: 'Exclusive',
         occasions: ['Special Celebrations', 'Unique Gifts', 'Corporate Events', 'Milestone Moments'],
         features: ['10-12 Premium Blue Roses', 'Cloud of Baby\'s Breath', 'Luxury Grey Wrapping', 'Silver Ribbon Accent', 'Exclusive Arrangement'],
         careInstructions: 'Handle with extra care, blue roses are delicate. Trim stems, use cool water, keep away from direct heat. Lasts 5-7 days with proper care.'
     },
     {
-        id: 'bouquet-golden-harmony',
+        id: 'bouquet-4',
         title: 'Golden Harmony',
         description: 'Luxurious golden yellow and pristine white roses artistically arranged in rich brown wrapping with elegant accents.',
         longDescription: 'A stunning symphony of warm golden yellow roses paired with pure white blooms, creating a harmonious balance of warmth and elegance. Each rose is hand-selected for its perfect form and vibrant color. The sophisticated brown wrapping with golden accents adds an earthy luxury that makes this bouquet perfect for autumn celebrations, corporate gifts, or expressing gratitude.',
         price: 175,
         originalPrice: 200,
-        image: 'assets/images/bouquet-golden-harmony.jpg',
-        fallbackImage: 'assets/images/products/roses.jpg',
+        image: 'assets/images/bo4.jpeg',
+        fallbackImage: 'assets/images/bo4.jpeg',
         badge: 'Elegant',
-        occasions: ['Gratitude', 'Corporate Gifts', 'Autumn Celebrations', 'Achievement Congratulations'],
+        occasions: ['Gratitude', 'Corporate Gifts', 'Autumn Celebrations', 'Achievement'],
         features: ['14-16 Golden Yellow & White Roses', 'Rich Brown Premium Wrapping', 'Golden Accent Details', 'Professional Hand-Tied', 'Luxury Presentation'],
         careInstructions: 'Remove wrapping carefully, trim stems at sharp angle, place in clean water with flower food. Roses will maintain beauty for 7-9 days.'
     },
     {
-        id: 'bouquet-vintage-elegance',
+        id: 'bouquet-5',
         title: 'Vintage Elegance',
         description: 'Timeless pure white roses wrapped in artistic vintage newspaper with sophisticated copper ribbon accents.',
         longDescription: 'Classic meets contemporary in this sophisticated arrangement of premium white roses. The unique vintage newspaper wrapping adds an artistic, literary touch while the copper ribbon provides a warm metallic accent. This distinctive presentation makes it perfect for book lovers, creative professionals, or anyone who appreciates understated elegance with a twist.',
         price: 155,
         originalPrice: 175,
-        image: 'assets/images/bouquet-vintage-elegance.jpg',
-        fallbackImage: 'assets/images/products/roses.jpg',
+        image: 'assets/images/bo5.jpeg',
+        fallbackImage: 'assets/images/bo5.jpeg',
         badge: 'Artistic',
-        occasions: ['Literary Events', 'Creative Celebrations', 'Vintage Themed Occasions', 'Unique Gifts'],
+        occasions: ['Literary Events', 'Creative Celebrations', 'Vintage Themed', 'Unique Gifts'],
         features: ['12-14 Premium White Roses', 'Vintage Newspaper Wrapping', 'Copper Ribbon Accent', 'Artistic Presentation', 'Eco-Friendly Style'],
         careInstructions: 'Carefully unwrap from newspaper, cut stems underwater, use fresh water daily. White roses stay pristine for 8-10 days with proper care.'
     },
     {
-        id: 'bouquet-celebration-special',
+        id: 'bouquet-6',
         title: 'Celebration Special',
         description: 'Elegant white carnations and purple chrysanthemums in a circular arrangement with a special money holder for celebrations.',
-        longDescription: 'A unique celebratory arrangement designed for special occasions where giving money is traditional. Premium white carnations create a pure foundation while vibrant purple chrysanthemums add festive color. The circular design includes an elegant holder for monetary gifts, making it perfect for graduations, weddings, or cultural celebrations where flowers and financial gifts are presented together.',
+        longDescription: 'A unique celebratory arrangement designed for special occasions where giving money is traditional. Premium white carnations create a pure foundation while vibrant purple chrysanthemums add festive color. The circular design includes an elegant holder for monetary gifts, making it perfect for graduations, weddings, or cultural celebrations.',
         price: 145,
         originalPrice: 165,
-        image: 'assets/images/bouquet-celebration-special.jpg',
-        fallbackImage: 'assets/images/products/roses.jpg',
+        image: 'assets/images/bo6.jpeg',
+        fallbackImage: 'assets/images/bo6.jpeg',
         badge: 'Special',
-        occasions: ['Graduations', 'Weddings', 'Cultural Celebrations', 'Money Gift Occasions'],
-        features: ['White Premium Carnations', 'Purple Chrysanthemums', 'Circular Design Arrangement', 'Money Holder Feature', 'Cultural Celebration Ready'],
+        occasions: ['Graduations', 'Weddings', 'Cultural Celebrations', 'Money Gift'],
+        features: ['White Premium Carnations', 'Purple Chrysanthemums', 'Circular Design', 'Money Holder Feature', 'Cultural Celebration Ready'],
         careInstructions: 'Keep arrangement cool, mist lightly with water, change water every 2-3 days. Carnations and chrysanthemums last 10-14 days.'
+    },
+    {
+        id: 'bouquet-7',
+        title: 'Romantic Red',
+        description: 'Classic deep red roses arranged in a stunning presentation, the ultimate expression of love and passion.',
+        longDescription: 'Nothing says love like a bouquet of deep red roses. This stunning arrangement features premium long-stemmed red roses, hand-selected for their velvety petals and intoxicating fragrance. Each stem is carefully arranged to create maximum impact, making this the perfect choice for romantic occasions, anniversaries, or declarations of love.',
+        price: 180,
+        originalPrice: 200,
+        image: 'assets/images/bo7.jpeg',
+        fallbackImage: 'assets/images/bo7.jpeg',
+        badge: 'Romantic',
+        occasions: ['Valentine\'s Day', 'Anniversary', 'Proposal', 'Romance'],
+        features: ['12-18 Premium Red Roses', 'Long-Stemmed Variety', 'Classic Presentation', 'Romantic Wrapping', 'Love Card Included'],
+        careInstructions: 'Trim stems at 45° angle, remove leaves below water line, change water every 2 days. Red roses last 7-10 days with care.'
+    },
+    {
+        id: 'bouquet-8',
+        title: 'Spring Delight',
+        description: 'A vibrant mix of seasonal flowers in cheerful colors, perfect for brightening any day or occasion.',
+        longDescription: 'Celebrate the beauty of nature with this delightful arrangement of mixed seasonal flowers. Featuring a harmonious blend of colors and textures, this bouquet captures the essence of a blooming garden. Our florists artfully combine roses, lilies, and seasonal blooms to create a stunning display that brings joy to any space.',
+        price: 160,
+        originalPrice: 180,
+        image: 'assets/images/bo8.jpeg',
+        fallbackImage: 'assets/images/bo8.jpeg',
+        badge: 'Seasonal',
+        occasions: ['Birthday', 'Get Well Soon', 'Housewarming', 'Just Because'],
+        features: ['Mixed Seasonal Flowers', 'Vibrant Color Palette', 'Fresh Garden Style', 'Premium Wrapping', 'Gift Card Included'],
+        careInstructions: 'Unwrap and place in clean vase, trim stems, use flower food. Mixed arrangements last 5-8 days with daily water changes.'
+    },
+    {
+        id: 'bouquet-9',
+        title: 'Pure Serenity',
+        description: 'An elegant arrangement of pristine white flowers symbolizing purity, peace, and new beginnings.',
+        longDescription: 'Find peace and tranquility with this serene all-white arrangement. Featuring a carefully curated selection of white roses, lilies, and accent flowers, this bouquet embodies elegance and sophistication. Perfect for sympathy occasions, weddings, or moments when you want to convey purity and heartfelt emotions.',
+        price: 170,
+        originalPrice: 190,
+        image: 'assets/images/bo9.jpeg',
+        fallbackImage: 'assets/images/bo9.jpeg',
+        badge: 'Elegant',
+        occasions: ['Sympathy', 'Wedding', 'New Baby', 'Peace Offering'],
+        features: ['All-White Premium Flowers', 'Elegant Presentation', 'Serene Design', 'Premium Wrapping', 'Thoughtful Card Included'],
+        careInstructions: 'Handle gently, place in cool area away from direct sunlight. Change water daily for maximum longevity of 7-10 days.'
     }
 ];
 
@@ -354,7 +396,7 @@ function renderBouquets() {
     if (!container) return;
 
     container.innerHTML = bouquets.map(bouquet => `
-        <div class="offer-card premium-bouquet animate-on-scroll" onclick="orderViaWhatsApp('${bouquet.title}', ${bouquet.price})" style="cursor: pointer;">
+        <div class="offer-card premium-bouquet animate-on-scroll" onclick="showBouquetDetail('${bouquet.id}')" style="cursor: pointer;">
             <div class="offer-image">
                 <img src="${bouquet.image}" alt="${bouquet.title}" onerror="this.onerror=null; this.src='${bouquet.fallbackImage}';">
                 <div class="offer-badge ${bouquet.badge.toLowerCase()}">${bouquet.badge}</div>
@@ -376,15 +418,85 @@ function renderBouquets() {
                     <span class="offer-code premium-code">${bouquet.occasions[0]}</span>
                 </div>
                 <div class="offer-footer">
-                    <span class="offer-valid">Fresh guarantee • Same-day delivery • Premium quality</span>
+                    <span class="offer-valid">Click to view details • Same-day delivery</span>
                     <div class="offer-actions">
-                        <button class="offer-cta premium-cta" onclick="event.stopPropagation(); orderViaWhatsApp('${bouquet.title}', ${bouquet.price})">Order Now</button>
-                        <a href="https://wa.me/971507056500?text=Hi! I'm interested in ${encodeURIComponent(bouquet.title)} bouquet for AED ${bouquet.price}" target="_blank" class="offer-whatsapp premium-whatsapp" onclick="event.stopPropagation();"><i class="fab fa-whatsapp"></i> Chat</a>
+                        <button class="offer-cta premium-cta" onclick="event.stopPropagation(); showBouquetDetail('${bouquet.id}')">View Details</button>
                     </div>
                 </div>
             </div>
         </div>
     `).join('');
+}
+
+// Show Bouquet Detail Modal
+function showBouquetDetail(bouquetId) {
+    const bouquet = bouquets.find(b => b.id === bouquetId);
+    if (!bouquet) return;
+
+    const modal = document.getElementById('detail-modal');
+    const modalBody = document.getElementById('detail-modal-body');
+    
+    if (!modal || !modalBody) return;
+
+    modalBody.innerHTML = `
+        <div class="bouquet-detail">
+            <div class="bouquet-detail-image">
+                <img src="${bouquet.image}" alt="${bouquet.title}" onerror="this.onerror=null; this.src='${bouquet.fallbackImage}';">
+                <div class="bouquet-detail-badge">${bouquet.badge}</div>
+            </div>
+            <div class="bouquet-detail-content">
+                <h2>${bouquet.title}</h2>
+                <div class="bouquet-detail-price">
+                    <span class="current-price">AED ${bouquet.price}</span>
+                    ${bouquet.originalPrice ? `<span class="was-price">Was AED ${bouquet.originalPrice}</span>` : ''}
+                </div>
+                <p class="bouquet-detail-desc">${bouquet.longDescription}</p>
+                
+                <div class="bouquet-detail-section">
+                    <h4>🎀 What's Included</h4>
+                    <ul class="bouquet-features-list">
+                        ${bouquet.features.map(f => `<li>✓ ${f}</li>`).join('')}
+                    </ul>
+                </div>
+                
+                <div class="bouquet-detail-section">
+                    <h4>🎉 Perfect For</h4>
+                    <div class="bouquet-occasions">
+                        ${bouquet.occasions.map(o => `<span class="occasion-tag">${o}</span>`).join('')}
+                    </div>
+                </div>
+                
+                <div class="bouquet-detail-section">
+                    <h4>🌿 Care Instructions</h4>
+                    <p class="care-text">${bouquet.careInstructions}</p>
+                </div>
+                
+                <div class="bouquet-detail-actions">
+                    <a href="https://wa.me/971507056500?text=${encodeURIComponent(`Hi! I'd like to order the "${bouquet.title}" bouquet for AED ${bouquet.price}. Please confirm availability.`)}" 
+                       target="_blank" 
+                       class="btn-whatsapp-order">
+                        <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                        </svg>
+                        Order on WhatsApp
+                    </a>
+                    <button class="btn-call-order" onclick="window.location.href='tel:+971507056500'">
+                        📞 Call to Order
+                    </button>
+                </div>
+                
+                <p class="bouquet-detail-note">
+                    ✨ Same-day delivery available in Sharjah & UAE<br>
+                    💝 All prices include wrapping, card & VAT
+                </p>
+            </div>
+        </div>
+    `;
+    
+    modal.style.display = 'flex';
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 }
 
 // Copy promo code helper

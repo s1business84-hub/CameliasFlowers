@@ -918,6 +918,220 @@ header {
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4) !important;
 }
 
+/* Bouquet Detail Modal Styles */
+.bouquet-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 1rem;
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+.bouquet-detail-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bouquet-detail-image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.bouquet-detail-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #b76e79, #d4a5a5);
+    color: white;
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+}
+
+.bouquet-detail-content {
+    padding: 1rem 0;
+}
+
+.bouquet-detail-content h2 {
+    font-size: 2rem;
+    color: #3d2c2e;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.bouquet-detail-price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.bouquet-detail-price .current-price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #b76e79;
+}
+
+.bouquet-detail-price .was-price {
+    font-size: 1.2rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.bouquet-detail-desc {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.bouquet-detail-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: rgba(183, 110, 121, 0.05);
+    border-radius: 15px;
+}
+
+.bouquet-detail-section h4 {
+    font-size: 1.1rem;
+    color: #3d2c2e;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+.bouquet-features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.bouquet-features-list li {
+    padding: 0.4rem 0;
+    color: #555;
+    font-size: 1rem;
+}
+
+.bouquet-occasions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.occasion-tag {
+    background: linear-gradient(135deg, #fae8e5, #fdf2f0);
+    color: #8b4557;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(183, 110, 121, 0.2);
+}
+
+.care-text {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.bouquet-detail-actions {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.btn-whatsapp-order {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+    flex: 1;
+    justify-content: center;
+}
+
+.btn-whatsapp-order:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(37, 211, 102, 0.4);
+}
+
+.btn-whatsapp-order svg {
+    width: 24px;
+    height: 24px;
+}
+
+.btn-call-order {
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #b76e79, #d4a5a5);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(183, 110, 121, 0.3);
+}
+
+.btn-call-order:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(183, 110, 121, 0.4);
+}
+
+.bouquet-detail-note {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: linear-gradient(135deg, #fdf2f0, #fae8e5);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: #8b4557;
+    text-align: center;
+    line-height: 1.6;
+}
+
+/* Mobile responsive for bouquet detail */
+@media (max-width: 768px) {
+    .bouquet-detail {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .bouquet-detail-image img {
+        max-height: 350px;
+    }
+    
+    .bouquet-detail-content h2 {
+        font-size: 1.6rem;
+    }
+    
+    .bouquet-detail-price .current-price {
+        font-size: 1.6rem;
+    }
+    
+    .bouquet-detail-actions {
+        flex-direction: column;
+    }
+    
+    .btn-whatsapp-order,
+    .btn-call-order {
+        width: 100%;
+    }
+}
+
 .nav-links a:hover::before {
     width: 120%;
     height: 200%;
