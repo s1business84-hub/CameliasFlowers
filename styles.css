@@ -5747,3 +5747,184 @@ button:active, a:active {
     }
 }
 
+/* ===========================
+   Collapsible Sections with View More
+   =========================== */
+
+/* View More button for offer sections */
+.section-view-more {
+    display: none;
+    margin: 2rem auto;
+    padding: 0.9rem 2.5rem;
+    background: linear-gradient(135deg, #b76e79, #8b4557);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 12px rgba(183, 110, 121, 0.3);
+}
+
+.section-view-more .arrow {
+    display: inline-block;
+    margin-left: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.section-view-more.expanded .arrow {
+    transform: rotate(180deg);
+}
+
+.section-view-more:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(183, 110, 121, 0.4);
+}
+
+.section-view-more:active {
+    transform: translateY(0);
+}
+
+/* Collapsed state for offer grids */
+@media (max-width: 768px) {
+    .section-view-more {
+        display: block;
+    }
+    
+    /* Specials grid - show 2 cards */
+    #specials-grid.collapsed {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-height: 600px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #specials-grid.collapsed .offer-card:nth-child(n+3) {
+        display: none;
+    }
+    
+    /* Seasonal offers grid - show 2 cards */
+    #offers-grid.collapsed {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-height: 600px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #offers-grid.collapsed .offer-card:nth-child(n+3) {
+        display: none;
+    }
+    
+    /* Bouquets grid - show 4 cards */
+    #bouquets-grid.collapsed {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        max-height: 1200px;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    #bouquets-grid.collapsed .offer-card:nth-child(n+5) {
+        display: none;
+    }
+    
+    /* Compact cards for mobile */
+    .offer-card {
+        min-width: auto;
+        max-width: 100%;
+        min-height: 460px;
+        padding: 1.5rem;
+    }
+    
+    .offer-image {
+        height: 200px;
+    }
+    
+    .offer-body {
+        padding: 1rem;
+        gap: 0.5rem;
+    }
+    
+    .offer-body h3 {
+        font-size: 1.3rem;
+    }
+    
+    .offer-body p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+    
+    .offer-price {
+        font-size: 1.4rem;
+    }
+    
+    .offer-code {
+        font-size: 0.8rem;
+        padding: 0.3rem 0.6rem;
+    }
+    
+    .offer-actions {
+        gap: 0.6rem;
+    }
+    
+    .offer-cta,
+    .copy-code {
+        padding: 0.8rem 1.2rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Even more compact on small screens */
+    #specials-grid.collapsed,
+    #offers-grid.collapsed {
+        grid-template-columns: 1fr;
+        max-height: 550px;
+    }
+    
+    #specials-grid.collapsed .offer-card:nth-child(n+2) {
+        display: none;
+    }
+    
+    #offers-grid.collapsed .offer-card:nth-child(n+2) {
+        display: none;
+    }
+    
+    #bouquets-grid.collapsed {
+        grid-template-columns: 1fr;
+        max-height: 1100px;
+    }
+    
+    #bouquets-grid.collapsed .offer-card:nth-child(n+3) {
+        display: none;
+    }
+    
+    .offer-card {
+        min-height: 420px;
+        padding: 1.2rem;
+    }
+    
+    .offer-image {
+        height: 180px;
+    }
+    
+    .offer-body h3 {
+        font-size: 1.2rem;
+    }
+    
+    .offer-body p {
+        font-size: 0.8rem;
+    }
+    
+    .section-view-more {
+        font-size: 0.85rem;
+        padding: 0.8rem 2rem;
+    }
+}
+

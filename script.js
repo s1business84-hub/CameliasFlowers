@@ -358,6 +358,9 @@ function renderSpecials() {
             </div>
         </div>
     `).join('');
+    
+    // Add View More button for specials
+    addViewMoreToSection('specials-grid', 'specials', 2);
 }
 
 function renderOffers() {
@@ -388,6 +391,9 @@ function renderOffers() {
             </div>
         </div>
     `).join('');
+    
+    // Add View More button for seasonal offers
+    addViewMoreToSection('offers-grid', 'seasonal', 2);
 }
 
 // Render Premium Bouquets
@@ -426,6 +432,53 @@ function renderBouquets() {
             </div>
         </div>
     `).join('');
+    
+    // Add View More button for bouquets
+    addViewMoreToSection('bouquets-grid', 'bouquets', 4);
+}
+
+// Universal View More functionality for all sections
+function addViewMoreToSection(gridId, sectionName, initialCount) {
+    const grid = document.getElementById(gridId);
+    if (!grid) return;
+    
+    const cards = grid.querySelectorAll('.offer-card');
+    if (cards.length <= initialCount) return; // Don't add button if not enough cards
+    
+    // Remove existing button if any
+    const existingBtn = document.getElementById(`view-more-${sectionName}`);
+    if (existingBtn) existingBtn.remove();
+    
+    // Create View More button
+    const viewMoreBtn = document.createElement('button');
+    viewMoreBtn.id = `view-more-${sectionName}`;
+    viewMoreBtn.className = 'view-more-btn section-view-more';
+    viewMoreBtn.innerHTML = '<span>View More</span> <span class="arrow">▼</span>';
+    
+    // Initially collapse grid on mobile
+    if (window.innerWidth <= 768) {
+        grid.classList.add('collapsed');
+        grid.dataset.initialCount = initialCount;
+    }
+    
+    viewMoreBtn.onclick = function() {
+        grid.classList.toggle('collapsed');
+        const isCollapsed = grid.classList.contains('collapsed');
+        viewMoreBtn.innerHTML = isCollapsed 
+            ? '<span>View More</span> <span class="arrow">▼</span>'
+            : '<span>Show Less</span> <span class="arrow">▲</span>';
+        viewMoreBtn.classList.toggle('expanded', !isCollapsed);
+        
+        // Smooth scroll to section if collapsing
+        if (isCollapsed) {
+            setTimeout(() => {
+                grid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 300);
+        }
+    };
+    
+    // Insert button after grid
+    grid.insertAdjacentElement('afterend', viewMoreBtn);
 }
 
 // Show Bouquet Detail Modal
