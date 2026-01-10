@@ -1,6 +1,8 @@
 {
   "version": 2,
   "outputDirectory": "",
+  "trailingSlash": false,
+  "cleanUrls": false,
   "headers": [
     {
       "source": "/(.*).html",
