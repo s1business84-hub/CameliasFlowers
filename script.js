@@ -578,7 +578,7 @@ function orderViaWhatsApp(productName, price) {
 // Order via Talabat with tracking
 function orderViaTalabat(productName = null) {
     const whatsappNumber = '971507056500';
-    const talabatUrl = 'https://pzwv.adj.st/?s=s&v=627632&c=ae&adj_t=1nid2lpq_1no0at5h&adj_campaign=google_reserve_place_order_action_CH-SEO_&adj_deep_link=talabat%3A%2F%2F%3Fs%3Ds%26v%3D627632%26c%3Dae&adj_fallback=https://www.talabat.com/uae/restaurant/643937/camellia-flowers-muwaileh-commercial?s=s&v=627632&c=ae&adj_t=1nid2lpq_1no0at5h&adj_campaign=google_reserve_place_order_action_CH-SEO_&adj_deep_link=talabat%3A%2F%2F%3Fs%3Ds%26v%3D627632%26c%3Dae&adj_fallback=https://www.talabat.com/uae/restaurant/643937/camellia-flowers-muwaileh-commercial?utm_campaign=google_reserve_place_order_action_CH-SEO_&adj_redirect_macos=https://www.talabat.com/uae/restaurant/643937/camellia-flowers-muwaileh-commercial?utm_campaign=google_reserve_place_order_action_CH-SEO_&adjust_deeplink_js=1';
+    const talabatUrl = 'https://www.talabat.com/uae/camellia-flowers';
     
     // Get timestamp and generate tracking ID
     const timestamp = new Date().toLocaleString('en-AE', { timeZone: 'Asia/Dubai' });
@@ -1597,6 +1597,7 @@ function toggleMobileMenu() {
     }
 }
 
+
 function closeMobileMenu() {
     const navLinks = document.getElementById('nav-links');
     const menuToggle = document.getElementById('mobile-menu-toggle');
@@ -1606,6 +1607,7 @@ function closeMobileMenu() {
     // Reset icon
     const menuIcon = menuToggle.querySelector('.menu-icon');
     menuIcon.textContent = '☰';
+
 }
 
 // Close mobile menu when clicking outside
