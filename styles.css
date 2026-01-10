@@ -522,7 +522,7 @@ header {
     position: relative;
     min-width: 340px;
     max-width: 340px;
-    height: 520px;
+    min-height: 520px;
     flex-shrink: 0;
     scroll-snap-align: center;
     background: rgba(255, 255, 255, 0.25);
@@ -535,11 +535,10 @@ header {
         0 8px 32px rgba(183, 110, 121, 0.2),
         inset 0 1px 0 rgba(255, 255, 255, 0.6),
         inset 0 -1px 0 rgba(255, 182, 193, 0.3);
-    overflow: hidden;
+    overflow: visible;
     transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .offer-card.animate-on-scroll {
@@ -685,6 +684,7 @@ header {
     gap: 0.75rem;
     flex: 1;
     padding: 1.25rem;
+    min-height: 0;
 }
 
 .offer-body h3 {
@@ -696,8 +696,9 @@ header {
 
 .offer-body p {
     color: #5e5660;
-    line-height: 1.7;
-    font-size: 1rem;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
 }
 
 .offer-meta {
