@@ -497,7 +497,6 @@ function showBouquetDetail(bouquetId) {
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
 }
-}
 
 // Copy promo code helper
 function copyPromo(code) {
