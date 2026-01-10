@@ -445,7 +445,15 @@ header {
     75% { transform: translate(-5%, 5%) rotate(3deg); }
 }
 
-.offers h2 {
+.offers-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+.offers h2,
+.offers-header h2 {
     font-size: 3.5rem;
     background: linear-gradient(135deg, #b76e79, #d4a5a5, #e8b4b8, #b76e79);
     background-size: 200% 200%;
@@ -473,6 +481,20 @@ header {
     z-index: 1;
     font-weight: 500;
     letter-spacing: 0.5px;
+}
+
+/* Seasonal Offers Section */
+.seasonal-offers {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(183, 110, 121, 0.2);
+}
+
+.seasonal-offers h3 {
+    font-size: 2.5rem;
+    color: #b76e79;
+    margin-bottom: 2rem;
+    font-weight: 700;
 }
 
 .offers-grid {
@@ -1123,10 +1145,16 @@ header {
     animation: float 10s ease-in-out infinite 2s, rotateFlower 20s linear infinite reverse;
 }
 
-.products h2 {
+.products-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.products h2,
+.products-header h2 {
     text-align: center;
     font-size: 3.5rem;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     background: linear-gradient(135deg, 
         #b76e79 0%, 
         #d4a5a5 20%,
@@ -1148,11 +1176,20 @@ header {
     text-shadow: 0 0 40px rgba(183, 110, 121, 0.4);
 }
 
-.products h2:hover {
+.products-subtitle {
+    font-size: 1.2rem;
+    color: #8b4557;
+    margin-bottom: 2rem;
+    font-weight: 500;
+}
+
+.products h2:hover,
+.products-header h2:hover {
     transform: translateX(-50%) scale(1.05);
 }
 
-.products h2::before {
+.products h2::before,
+.products-header h2::before {
     content: '🌼';
     position: absolute;
     left: -60px;
@@ -1162,7 +1199,8 @@ header {
     animation: bounce 2s ease-in-out infinite;
 }
 
-.products h2::after {
+.products h2::after,
+.products-header h2::after {
     content: '🌻';
     position: absolute;
     right: -60px;
@@ -1170,6 +1208,36 @@ header {
     transform: translateY(-50%);
     font-size: 2.5rem;
     animation: bounce 2s ease-in-out infinite 1s;
+}
+
+/* Bouquets Section within Products */
+.bouquets-section {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(183, 110, 121, 0.2);
+}
+
+.bouquets-section h3 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #b76e79;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.bouquets-subtitle {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #8b4557;
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.bouquets-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
 .product-tools {
@@ -1442,7 +1510,8 @@ header {
    ABOUT SECTION - WITH PARALLAX
    ============================================ */
 
-.about {
+.about,
+.about-combined {
     padding: 5rem 5%;
     background: linear-gradient(135deg, rgba(255, 155, 205, 0.18) 0%, rgba(255, 233, 247, 0.4) 100%);
     text-align: center;
@@ -1453,7 +1522,8 @@ header {
     -webkit-backdrop-filter: blur(10px);
 }
 
-.about::before {
+.about::before,
+.about-combined::before {
     content: '🌹';
     position: absolute;
     top: 20%;
@@ -1463,7 +1533,8 @@ header {
     animation: rotate 20s linear infinite, float 5s ease-in-out infinite;
 }
 
-.about::after {
+.about::after,
+.about-combined::after {
     content: '🌼';
     position: absolute;
     bottom: 20%;
@@ -1473,7 +1544,8 @@ header {
     animation: rotate 25s linear infinite reverse, float 6s ease-in-out infinite 1s;
 }
 
-.about h2 {
+.about h2,
+.about-combined h2 {
     font-size: 3rem;
     margin-bottom: 2rem;
     color: var(--text-deep);
@@ -1482,12 +1554,14 @@ header {
     display: inline-block;
 }
 
-.about h2:hover {
+.about h2:hover,
+.about-combined h2:hover {
     transform: scale(1.05);
     color: var(--pink-3);
 }
 
-.about p {
+.about p,
+.about-combined p {
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
@@ -1497,9 +1571,69 @@ header {
     transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.about p:hover {
+.about p:hover,
+.about-combined p:hover {
     transform: scale(1.02);
     color: #333;
+}
+
+/* Why Choose Us Highlights */
+.why-choose-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid rgba(183, 110, 121, 0.3);
+}
+
+.highlight-card {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(183, 110, 121, 0.15);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.highlight-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(183, 110, 121, 0.25);
+}
+
+.highlight-card.featured {
+    background: linear-gradient(135deg, #b76e79, #d4a5a5);
+    color: white;
+}
+
+.highlight-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.9);
+    color: #b76e79;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.highlight-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.highlight-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.highlight-card p {
+    font-size: 1rem;
+    margin: 0;
+    opacity: 0.9;
 }
 
 /* ============================================

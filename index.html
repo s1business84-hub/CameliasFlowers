@@ -9,7 +9,7 @@
     <title>Camellias Flowers - Premium Flowers in UAE</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="stylesheet" href="styles.css?v=20260105u">
+    <link rel="stylesheet" href="styles.css?v=20260105w">
     <style>
         /* Prevent white flash on load */
         html, body {
@@ -58,10 +58,9 @@
             </button>
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home" onclick="closeMobileMenu()">Home</a></li>
-                <li><a href="#quiz" onclick="closeMobileMenu()">Find Your Flowers</a></li>
-                <li><a href="#products" onclick="closeMobileMenu()">Flowers</a></li>
+                <li><a href="#products" onclick="closeMobileMenu()">Shop</a></li>
+                <li><a href="#quiz" onclick="closeMobileMenu()">Find Flowers</a></li>
                 <li><a href="#specials" onclick="closeMobileMenu()">Specials</a></li>
-                <li><a href="#offers" onclick="closeMobileMenu()">Seasonal</a></li>
                 <li><a href="#about" onclick="closeMobileMenu()">About</a></li>
                 <li><a href="#contact" onclick="closeMobileMenu()">Contact</a></li>
                 <li class="mobile-only"><a href="tel:+971507056500" onclick="closeMobileMenu()">📞 Call Us</a></li>
@@ -98,6 +97,28 @@
             </div>
         </div>
         <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- MAIN PRODUCTS SECTION - All Flowers and Bouquets -->
+    <section id="products" class="products">
+        <div class="products-header">
+            <h2>Our Beautiful Collection</h2>
+            <p class="products-subtitle">Handcrafted arrangements for every occasion | Fresh daily from premium farms</p>
+        </div>
+        
+        <!-- Flowers & Bouquets Grid -->
+        <div class="product-grid" id="product-grid">
+            <!-- Products will be loaded here by JavaScript -->
+        </div>
+        
+        <!-- Bouquets Section -->
+        <div class="bouquets-section">
+            <h3>Premium Bouquets</h3>
+            <p class="bouquets-subtitle">Elegant arrangements ready for delivery</p>
+            <div class="bouquets-grid" id="bouquets-grid">
+                <!-- Bouquets will be added here - user has pictures ready -->
+            </div>
+        </div>
     </section>
 
     <!-- QUIZ SECTION -->
@@ -156,6 +177,22 @@
         </div>
     </section>
 
+    <!-- SPECIALS & OFFERS SECTION -->
+    <section id="specials" class="offers">
+        <div class="offers-header">
+            <h2>Today's Specials</h2>
+            <p class="offers-subtitle">Exclusive bouquets with all-inclusive pricing | Limited time offers</p>
+        </div>
+        <div class="offers-grid" id="specials-grid"></div>
+        
+        <!-- Seasonal Offers -->
+        <div class="seasonal-offers">
+            <h3>Seasonal Discounts</h3>
+            <div class="offers-grid" id="offers-grid"></div>
+        </div>
+    </section>
+
+    <!-- FEATURES & WHY CHOOSE US -->
     <section id="features" class="features">
         <div class="features-container">
             <div class="feature-card">
@@ -181,87 +218,8 @@
         </div>
     </section>
 
-    <!-- HOW WE ARE DIFFERENT SECTION -->
-    <section id="different" class="different-section">
-        <div class="different-container">
-            <div class="different-header">
-                <h2 class="translatable" data-en="How We Are Different" data-ar="كيف نحن مختلفون">How We Are Different</h2>
-                <p class="translatable" data-en="What sets Camellia Flowers apart from other flower shops in UAE" data-ar="ما الذي يميز كاميليا فلاورز عن محلات الزهور الأخرى في الإمارات">What sets Camellia Flowers apart from other flower shops in UAE</p>
-            </div>
-            
-            <div class="different-grid">
-                <div class="different-card">
-                    <div class="different-icon">🏆</div>
-                    <h3 class="translatable" data-en="Award-Winning Florists" data-ar="خبراء الزهور الحائزون على جوائز">Award-Winning Florists</h3>
-                    <p class="translatable" data-en="Our master florists bring 30+ years of European-trained expertise, creating arrangements that are true works of art." data-ar="خبراؤنا في تنسيق الزهور يتمتعون بخبرة تزيد عن 30 عامًا، مع تدريب أوروبي متميز.">Our master florists bring 30+ years of European-trained expertise, creating arrangements that are true works of art.</p>
-                </div>
-                
-                <div class="different-card highlight">
-                    <div class="different-badge">Most Popular</div>
-                    <div class="different-icon">✨</div>
-                    <h3 class="translatable" data-en="Real-Time Order Tracking" data-ar="تتبع الطلب في الوقت الفعلي">Real-Time Order Tracking</h3>
-                    <p class="translatable" data-en="Track your delivery live on Talabat or get instant WhatsApp updates. Full transparency from order to doorstep." data-ar="تتبع توصيلك مباشرة على طلبات أو احصل على تحديثات فورية عبر واتساب. شفافية كاملة من الطلب إلى الباب.">Track your delivery live on Talabat or get instant WhatsApp updates. Full transparency from order to doorstep.</p>
-                </div>
-                
-                <div class="different-card">
-                    <div class="different-icon">🌍</div>
-                    <h3 class="translatable" data-en="Direct Farm Partnership" data-ar="شراكة مباشرة مع المزارع">Direct Farm Partnership</h3>
-                    <p class="translatable" data-en="We source directly from premium farms worldwide, bypassing middlemen to ensure fresher flowers at better prices." data-ar="نحصل على الزهور مباشرة من مزارع متميزة عالميًا، لضمان زهور أكثر نضارة بأسعار أفضل.">We source directly from premium farms worldwide, bypassing middlemen to ensure fresher flowers at better prices.</p>
-                </div>
-                
-                <div class="different-card">
-                    <div class="different-icon">📱</div>
-                    <h3 class="translatable" data-en="Smart Flower Quiz" data-ar="اختبار الزهور الذكي">Smart Flower Quiz</h3>
-                    <p class="translatable" data-en="Our AI-powered quiz recommends the perfect arrangement based on occasion, style, and delivery needs - unique to Camellia Flowers." data-ar="اختبارنا الذكي يوصي بالباقة المثالية بناءً على المناسبة والأسلوب واحتياجات التوصيل.">Our AI-powered quiz recommends the perfect arrangement based on occasion, style, and delivery needs - unique to Camellia Flowers.</p>
-                </div>
-                
-                <div class="different-card">
-                    <div class="different-icon">💰</div>
-                    <h3 class="translatable" data-en="Price Match Guarantee" data-ar="ضمان مطابقة السعر">Price Match Guarantee</h3>
-                    <p class="translatable" data-en="Find the same quality arrangement cheaper elsewhere in Sharjah? We'll match it and add 10% off your next order." data-ar="وجدت نفس الباقة بجودة مماثلة بسعر أرخص في الشارقة؟ سنطابق السعر ونضيف خصم 10% على طلبك القادم.">Find the same quality arrangement cheaper elsewhere in Sharjah? We'll match it and add 10% off your next order.</p>
-                </div>
-                
-                <div class="different-card">
-                    <div class="different-icon">⏰</div>
-                    <h3 class="translatable" data-en="24/7 WhatsApp Support" data-ar="دعم واتساب على مدار الساعة">24/7 WhatsApp Support</h3>
-                    <p class="translatable" data-en="Real humans, not bots. Get instant responses on WhatsApp anytime for urgent orders, customizations, or questions." data-ar="أشخاص حقيقيون، وليس روبوتات. احصل على ردود فورية عبر واتساب في أي وقت للطلبات العاجلة أو التخصيص.">Real humans, not bots. Get instant responses on WhatsApp anytime for urgent orders, customizations, or questions.</p>
-                </div>
-            </div>
-            
-            <div class="different-cta">
-                <h3 class="translatable" data-en="Experience the Camellia Difference Today" data-ar="جرب الفرق مع كاميليا اليوم">Experience the Camellia Difference Today</h3>
-                <div class="different-buttons">
-                    <button class="btn btn-primary" onclick="orderViaTalabat()">
-                        <span class="translatable" data-en="Order on Talabat" data-ar="اطلب على طلبات">Order on Talabat</span>
-                    </button>
-                    <button class="btn btn-secondary" onclick="document.getElementById('quiz').scrollIntoView({behavior: 'smooth'})">
-                        <span class="translatable" data-en="Take Flower Quiz" data-ar="ابدأ اختبار الزهور">Take Flower Quiz</span>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="products" class="products">
-        <h2>Our Beautiful Collection</h2>
-        <div class="product-grid" id="product-grid">
-            <!-- Products will be loaded here by JavaScript -->
-        </div>
-    </section>
-
-    <section id="specials" class="offers">
-        <h2>Specials</h2>
-        <p class="offers-subtitle">Exclusive bouquets with all-inclusive pricing.</p>
-        <div class="offers-grid" id="specials-grid"></div>
-    </section>
-
-    <section id="offers" class="offers">
-        <h2>Seasonal Discounts</h2>
-        <p class="offers-subtitle">Limited-time bouquets and bundles with fresh seasonal blooms.</p>
-        <div class="offers-grid" id="offers-grid"></div>
-    </section>
-
-    <section id="about" class="about">
+    <!-- ABOUT & WHY CHOOSE US -->
+    <section id="about" class="about-combined">
         <div class="about-container">
             <div class="about-image">
                 <img src="assets/images/about-florist.jpg" alt="Florist arranging flowers" onerror="this.onerror=null; this.src='assets/images/about-florist.jpg';">
@@ -279,17 +237,37 @@
                     </div>
                     <div class="about-feature-item">
                         <span class="feature-check">✓</span>
-                        <span>Sustainable sourcing practices</span>
+                        <span>Direct farm partnerships</span>
                     </div>
                     <div class="about-feature-item">
                         <span class="feature-check">✓</span>
-                        <span>Premium imported flowers</span>
+                        <span>24/7 WhatsApp support</span>
                     </div>
                     <div class="about-feature-item">
                         <span class="feature-check">✓</span>
-                        <span>Custom corporate solutions</span>
+                        <span>Real-time order tracking</span>
                     </div>
                 </div>
+            </div>
+        </div>
+        
+        <!-- Why Choose Us Highlights -->
+        <div class="why-choose-highlights">
+            <div class="highlight-card">
+                <div class="highlight-icon">🏆</div>
+                <h3>Award-Winning Team</h3>
+                <p>30+ years of European-trained expertise</p>
+            </div>
+            <div class="highlight-card featured">
+                <div class="highlight-badge">Most Popular</div>
+                <div class="highlight-icon">✨</div>
+                <h3>Live Order Tracking</h3>
+                <p>Track on Talabat or get WhatsApp updates</p>
+            </div>
+            <div class="highlight-card">
+                <div class="highlight-icon">💰</div>
+                <h3>Price Match Guarantee</h3>
+                <p>Find cheaper? We'll match + 10% off next order</p>
             </div>
         </div>
     </section>
@@ -399,7 +377,7 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#products">Shop</a></li>
-                    <li><a href="#offers">Offers</a></li>
+                    <li><a href="#specials">Specials</a></li>
                     <li><a href="#about">About</a></li>
                 </ul>
             </div>
@@ -451,6 +429,6 @@
         <span class="whatsapp-text">WhatsApp</span>
     </a>
 
-    <script src="script.js?v=20260105t"></script>
+    <script src="script.js?v=20260105w"></script>
 </body>
 </html>
